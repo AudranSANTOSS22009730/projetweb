@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width-device width, initial-scale=1">
     <title>Form Login and Register</title>
+    <link rel="stylesheet" href="style.css">
+
 </head>
 </html>
 <div class="signup">

@@ -1,0 +1,12 @@
+body{
+    background:black ;
+}
+.signup {
+    width: 360px;
+    height: 800px;
+    margin: auto;
+    background: white;
+}
+h1{
+    text-align: center;
+}
