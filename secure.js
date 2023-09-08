@@ -1,9 +1,9 @@
-// password-strength.js
+// secure.js
 
 const passwordInput = document.getElementById("password");
 const passwordStrength = document.getElementById("password-strength");
 
-// Fonction pour mettre à jour la fiabilité du mot de passe
+//  fiablité du mot de passe
 function updatePasswordStrength() {
     const password = passwordInput.value;
 
@@ -19,7 +19,7 @@ function updatePasswordStrength() {
         strengthClass = "strong";
     }
 
-    // Appliquer la classe de fiabilité à la barre
+    // Classe de fiabilité à la barre
     passwordStrength.className = strengthClass;
 }
 
