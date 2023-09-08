@@ -18,6 +18,7 @@
             <input type="submit" name="submit" value="Login">
         </form>
         <p>Vous n'avez pas de compte ? <a href="signin.php">S'inscrire</a></p>
+        <p>Vous avez oublié votre mot de passe ? <a href="passwordforgotten.php">Mot de passe oublié</a></p>
     <script src="password-strength.js"></script>
 
 </div>
