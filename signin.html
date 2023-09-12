@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Form Login and Register</title>
+    <link rel="stylesheet" href="signin.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <img src="W.png" class="logo" alt="Logo">
+        <h1><span class="highlight-text">Wapp</span></h1>
+        <p>Là où la malice du Fenek rencontre la liberté</p>
+    </div>
+    <div class="login">
+        <form method="POST" action="traitement.php">
+            <h2>Sign up</h2>
+            <h4>Join Woap !</h4>
+            <p>Nom</p>
+            <input type="text" name="Nom">
+            <p>Prenom</p>
+            <input type="text" name="Prenom">
+            <p>Email</p>
+            <input type="text" name="email" id="email-input">
+            <div id="email-suggestions"></div> <!-- Div pour afficher les suggestions -->
+            <p>Mot de passe</p>
+            <input type="password" name="password" id="password">
+            <input type="checkbox" id="show-password"> Voir le mot de passe
+            <div id="password-strength-messages"></div>
+            <p>Répétez votre mot de passe</p>
+            <input type="password" name="repeatpassword" id="repeat-password">
+            <input type="checkbox" id="show-repeat-password"> Voir le mot de passe de confirmation
+            <input type="submit" name="submit" value="Sign in">
+        </form>
+        <p>En cliquant sur le bouton, vous acceptez les conditions générales<br>
+            <a href="#">Termes & Condition</a> and <a href="#">Politique privée</a>
+        </p>
+        <p>Vous avez déjà un compte ? <a href="login.php">Login</a></p>
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        const passwordInput = $("#password");
+        const repeatPasswordInput = $("#repeat-password");
+        const showPasswordCheckbox = $("#show-password");
+        const showRepeatPasswordCheckbox = $("#show-repeat-password");
+        const emailInput = $("#email-input"); // Sélectionnez l'entrée d'email
+        const emailSuggestions = $("#email-suggestions"); // Sélectionnez la div de suggestions
+
+        emailInput.on("input", function () {
+            const typedText = emailInput.val();
+            const suggestions = ["gmail.com", "yahoo.com", "outlook.com", "aol.com", "icloud.com"];
+            const filteredSuggestions = suggestions.filter(suggestion => suggestion.includes(typedText));
+
+            // Afficher les suggestions
+            const suggestionsHtml = filteredSuggestions.map(suggestion => `<div>${suggestion}</div>`).join("");
+            emailSuggestions.html(suggestionsHtml);
+
+            // Afficher ou masquer les suggestions en fonction du contenu de l'entrée
+            if (filteredSuggestions.length > 0) {
+                emailSuggestions.show();
+            } else {
+                emailSuggestions.hide();
+            }
+        });
+        emailSuggestions.on("click", "div", function () {
+            const suggestion = $(this).text();
+            emailInput.val(suggestion); // Remplacer le champ d'email par la suggestion
+            emailSuggestions.hide(); // Masquer les suggestions
+        });
+        // Fonction pour mettre à jour le type de champ de mot de passe
+        function togglePasswordVisibility() {
+            if (showPasswordCheckbox.prop("checked")) {
+                passwordInput.attr("type", "text");
+            } else {
+                passwordInput.attr("type", "password");
+            }
+        }
+
+        // Fonction pour mettre à jour le type de champ de mot de passe de confirmation
+        function toggleRepeatPasswordVisibility() {
+            if (showRepeatPasswordCheckbox.prop("checked")) {
+                repeatPasswordInput.attr("type", "text");
+            } else {
+                repeatPasswordInput.attr("type", "password");
+            }
+        }
+
+        // Écouteur d'événement pour le changement d'état de la case à cocher du mot de passe
+        showPasswordCheckbox.on("change", togglePasswordVisibility);
+
+        // Écouteur d'événement pour le changement d'état de la case à cocher du mot de passe de confirmation
+        showRepeatPasswordCheckbox.on("change", toggleRepeatPasswordVisibility);
+
+        // Suggestion d'adresse email lorsque l'utilisateur commence à taper
+        emailInput.on("input", function () {
+            const typedText = emailInput.val();
+            const suggestions = ["gmail.com", "yahoo.com", "outlook.com", "aol.com", "icloud.com"];
+            const filteredSuggestions = suggestions.filter(suggestion => suggestion.includes(typedText));
+
+            // Afficher les suggestions
+            const suggestionsHtml = filteredSuggestions.map(suggestion => `<div>${suggestion}</div>`).join("");
+            $("#email-suggestions").html(suggestionsHtml);
+        });
+
+        // Gérer le clic sur une suggestion d'adresse email
+        $("#email-suggestions").on("click", "div", function () {
+            const suggestion = $(this).text();
+            emailInput.val(suggestion); // Remplacer le champ d'email par la suggestion
+            $("#email-suggestions").empty(); // Effacer les suggestions
+        });
+
+        // Fonction pour vérifier la force du mot de passe (vous pouvez ajouter cette partie ici)
+        function updatePasswordStrength() {
+            const password = passwordInput.val();
+            let strengthClass = "very-weak";
+
+            if (password.length >= 16) {
+                if (/[0-9]/.test(password)) {
+                    if (/[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]/.test(password)) {
+                        if ((password.match(/[A-Z]/g) || []).length >= 2) {
+                            if ((password.match(/[a-z]/g) || []).length >= 3) {
+                                strengthClass = "strong";
+                            } else {
+                                strengthClass = "medium";
+                            }
+                        } else {
+                            strengthClass = "medium";
+                        }
+                    } else {
+                        strengthClass = "weak";
+                    }
+                } else {
+                    strengthClass = "weak";
+                }
+            }
+
+            // Mettre à jour la classe de force du mot de passe
+            if (strengthClass === "very-weak") {
+                $("#password-strength-messages").html("<p style='color: red;'>Le mot de passe est très faible.</p>");
+            } else if (strengthClass === "weak") {
+                $("#password-strength-messages").html("<p style='color: orange;'>Le mot de passe est faible.</p>");
+            } else if (strengthClass === "medium") {
+                $("#password-strength-messages").html("<p style='color: yellow;'>Le mot de passe est moyen.</p>");
+            } else {
+                $("#password-strength-messages").html("<p style='color: green;'>Le mot de passe est fort.</p>");
+            }
+        }
+
+        passwordInput.on("input", updatePasswordStrength);
+    });
+</script>
+</body>
+</html>
