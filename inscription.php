@@ -27,16 +27,15 @@
         .login-form h2 {
             margin: 0 0 15px;
         }
-        .form-control, .btn {
-            min-height: 38px;
-            border-radius: 2px;
-        }
+
         .btn {
             font-size: 15px;
             font-weight: bold;
             background-color: black;
             color: white;
         }
+
+
     </style>
 </head>
 <body>
@@ -102,13 +101,9 @@
     <form action="inscription_traitement.php" method="post">
         <h2 class="text-center">Inscription</h2>
         <div class="form-group">
-            <label for="nom">Nom</label>
-            <input type="text" name="nom" class="form-control" placeholder="Nom" required="required" autocomplete="on">
-        </div>
-        <div class="form-group">
-            <label for="prenom">Prénom</label>
-            <input type="text" name="prenom" class="form-control" placeholder="Prénom" required="required" autocomplete="off">
-        </div>
+            <label for="pseudo">pseudo</label>
+            <input type="text" name="pseudo" class="form-control" placeholder="pseudo" required="required" autocomplete="on">
+
         <div class="form-group">
             <label for="email"> Adresse mail</label>
             <input type="text" name="email" class="form-control" placeholder="Email" required="required" autocomplete="off">
@@ -137,10 +132,13 @@
         <div class="form-group">
             <input type="checkbox" id="showPasswordRetype"> Afficher le mot de passe
         </div>
-
-        <p class="text-center">Déjà inscrit ? <a href="index.php">Connectez-vous ici</a></p>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">Inscription</button>
+        </div>
     </form>
-</div>
+        <p class="text-center">Déjà inscrit ? <a href="index.php">Connectez-vous ici</a></p>
+
+
 
 <!-- JavaScript pour afficher/masquer le mot de passe -->
 <script>
@@ -159,4 +157,3 @@
 </script>
 </body>
 </html>
-

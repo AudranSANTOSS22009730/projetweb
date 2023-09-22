@@ -61,21 +61,6 @@
                 <div class="alert alert-danger">
                     <strong>Erreur</strong> email incorrect
                 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 <?php
                 break;
         }
@@ -95,6 +80,8 @@
         </div>
     </form>
     <p class="text-center"><a href="inscription.php">Inscription</a></p>
+    <p
+    <p class="text-center"><a href="mdpOublie.php">Mot de passe oublié</a></p>
 </div>
 </body>
 </html>
