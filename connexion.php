@@ -15,6 +15,7 @@ require_once 'config.php'; // On inclut la connexion à la base de données
     <link rel="icon" href="wapp_icon.png" type="image/png">
     <title>Connexion</title>
 </head>
+
 <body>
 <div class="login-form">
     <?php

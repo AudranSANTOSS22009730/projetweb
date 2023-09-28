@@ -4,28 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a3a9227-5a67-4546-b6cd-ab0c496a7cd3" name="Changes" comment="modif">
-      <change afterPath="$PROJECT_DIR$/_assets/config/config.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_assets/fonts/fonts.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_assets/images/icons/icons.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_assets/includes/includes.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_assets/libs/libs.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_assets/logs/logs.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_assets/scripts/scripts.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_assets/styles/inscription.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_assets/styles/landing.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_assets/styles/mdpOublie.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_assets/utils/class/class.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_assets/webfronts/webfronts.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/blog/controllers/models/models.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/blog/controllers/views/view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/bonprojet.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/accueil.php" beforeDir="false" afterPath="$PROJECT_DIR$/accueil.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inscription_traitement.php" beforeDir="false" afterPath="$PROJECT_DIR$/inscription_traitement.php" afterDir="false" />
+    <list default="true" id="2a3a9227-5a67-4546-b6cd-ab0c496a7cd3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/connexion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styleConnexion.css" beforeDir="false" afterPath="$PROJECT_DIR$/_assets/styles/connexion.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +42,9 @@
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/bin/php" />
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectId" id="2V3hiSvSb6xnOivyHAsnsWEDN3T" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -102,7 +87,7 @@
       <workItem from="1695284023392" duration="6162000" />
       <workItem from="1695391551344" duration="627000" />
       <workItem from="1695392194388" duration="3999000" />
-      <workItem from="1695882249573" duration="3791000" />
+      <workItem from="1695882249573" duration="6766000" />
     </task>
     <task id="LOCAL-00001" summary="Ajout de fichier">
       <created>1694508356645</created>
@@ -146,7 +131,21 @@
       <option name="project" value="LOCAL" />
       <updated>1695395304555</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="modiff">
+      <created>1695886343371</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1695886343371</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Modif des css">
+      <created>1695887714682</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1695887714682</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -168,6 +167,8 @@
     <MESSAGE value="Modification" />
     <MESSAGE value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/modules.xml" />
     <MESSAGE value="modif" />
-    <option name="LAST_COMMIT_MESSAGE" value="modif" />
+    <MESSAGE value="modiff" />
+    <MESSAGE value="Modif des css" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modif des css" />
   </component>
 </project>
