@@ -29,8 +29,8 @@ if (!empty($_POST['pseudo'])  && !empty($_POST['email']) && !empty($_POST['passw
                     if ($password === $password_retype) { // Vérifie si les deux mots de passe saisis correspondent
 
                         // Hachage du mot de passe en utilisant Bcrypt avec un coût de 12
-                        $cost = ['cost' => 12];
-                        $password = password_hash($password, PASSWORD_BCRYPT, $cost);
+                        //$cost = ['cost' => 12];
+                        //$password = password_hash($password, PASSWORD_BCRYPT, $cost);
 
                         // Stocke l'adresse IP
                         $ip = $_SERVER['REMOTE_ADDR'];
