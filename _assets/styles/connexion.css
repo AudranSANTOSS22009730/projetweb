@@ -6,6 +6,7 @@ body {
     height: 100vh;
     margin: 0;
 }
+
 .container {
     background-color: rgb(255, 213, 43);
     color: black;
@@ -23,4 +24,16 @@ body {
     font-weight: bold;
     background-color: black;
     color: white;
+}
+.login-form {
+    background-color: #ffd929;
+    color: black;
+    width: 340px;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 100);
+}
+
+.login-form h2 {
+    margin: 0 0 15px;
 }

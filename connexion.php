@@ -1,85 +1,63 @@
 <?php
-global $conn;
 session_start(); // Démarrage de la session
 require_once 'config.php'; // On inclut la connexion à la base de données
+?>
 
-if(!empty($_POST['email']) && !empty($_POST['password'])) // Si il existe les champs email, password et qu'il sont pas vident
-{
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="NoS1gnal"/>
+    <link rel="stylesheet" type="text/css" href="_assets/styles/connexion.css"> <!-- Assurez-vous que le chemin vers votre fichier CSS est correct -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="icon" href="wapp_icon.png" type="image/png">
+    <title>Connexion</title>
+</head>
 
-    function validate($data)
+<body>
+<div class="login-form">
+    <?php
+    if(isset($_GET['login_err']))
     {
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-    }
+        $err = htmlspecialchars($_GET['login_err']);
 
-    // Patch XSS
-    $email = validate($_POST['email']);
-    $password = validate($_POST['password']);
-
-    if(empty($email)){
-        header("Location: index.php?error=User Name is required");
-        exit();
-    }else if(empty($password)){
-        header("Location: index.php?error= Password is required");
-        exit();
-    }else{
-        $sql = "SELECT * FROM users WHERE email = '$email' AND password = '$password'";
-        $result = mysqli_query($conn, $sql);
-
-        if(mysqli_num_rows($result)== 1){
-            $row = mysqli_fetch_assoc($result);
-            if($row['email'] === $email && $row['password'] === $password){
-                header("Location: accueil.php");
-                exit();
-            }else{
-                header("Location: index: index.php?error=Incorrect User name or password");
-                exit();
-            }
-        }else{
-            header("Location: index: index.php?error=Incorrect User name or password");
-            exit();
-        }
-
-    }
-
-
-
-}else{
-    header("Location: index.php");
-    exit();
-}
-
-/*
-
-$email = strtolower($email); // email transformé en minuscule
-
-
-// On regarde si l'utilisateur est inscrit dans la table utilisateurs
-$check = $conn->prepare('SELECT pseudo, password, email FROM users  WHERE email = ?');
-$check->execute(array($email));
-$data = $check->fetch();
-$row = $check->num_rows;
-
-
-
-// Si > à 0 alors l'utilisateur existe
-if($row > 0)
-{
-    // Si le mail est bon niveau format
-    if(filter_var($email, FILTER_VALIDATE_EMAIL))
-    {
-        // Si le mot de passe est le bon
-        if(password_verify($password, $data['password']))
+        switch($err)
         {
-            // On créer la session et on redirige sur landing.php
-            $_SESSION['user'] = $data['token'];
-            header('Location: landing.php');
-            die();
-        }else{ header('Location: index.php?login_err=password'); die(); }
-    }else{ header('Location: index.php?login_err=email'); die(); }
-}else{ header('Location: index.php?login_err=already'); die(); }
-}else{ header('Location: index.php'); die();} // si le formulaire est envoyé sans aucune données
+            case 'password':
+                ?>
+                <div class="alert alert-danger">
+                    <strong>Erreur</strong> mot de passe incorrect
+                </div>
+                <?php
+                break;
 
-*/
+            case 'email':
+                ?>
+                <div class="alert alert-danger">
+                    <strong>Erreur</strong> email incorrect
+                </div>
+                <?php
+                break;
+        }
+    }
+    ?>
+
+    <form action="connexion.php" method="post">
+        <h2 class="text-center">Connexion</h2>
+        <div class="form-group">
+            <input type="email" name="email" class="form-control" placeholder="Email" required="required" autocomplete="off">
+        </div>
+        <div class="form-group">
+            <input type="password" name="password" class="form-control" placeholder="Mot de passe" required="required" autocomplete="off">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">Connexion</button>
+        </div>
+    </form>
+    <p class="text-center"><a href="inscription.php">Inscription</a></p>
+    <p class="text-center"><a href="mdpOublie.php">Mot de passe oublié</a></p>
+</div>
+</body>
+</html>

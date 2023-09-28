@@ -17,7 +17,7 @@ $publications = [
 <head>
     <meta charset="UTF-8">
     <title>Accueil - Mon Réseau Social</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="_assets/styles/styles.css">
     <link rel="icon" href="wapp_icon.png" type="image/png">
 </head>
 <body>
