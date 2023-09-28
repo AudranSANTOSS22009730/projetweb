@@ -12,13 +12,17 @@ if(isset($_POST["valider"])) {
         $type_image = $_FILES["image"]["type"];
         $chemin_temporaire = $_FILES["image"]["tmp_name"];
 
+        $extensions_valides = array('jpg', 'jpeg', 'png', 'gif');
+        $extension = pathinfo($nom_image, PATHINFO_EXTENSION);
+
+        if (in_array($extension, $extensions_valides)){
+            $req = $pdo-> prepare("INSERT INTO images (nom, taille, type, bin) VALUES (?, ?, ?, ?)");
+        }
         // Vérifier si le fichier est une image (vous pouvez ajouter d'autres vérifications ici)
         if (strpos($type_image, 'image') !== false) {
             // Préparer et exécuter la requête pour insérer l'image dans la base de données
             $req = $pdo->prepare("INSERT INTO images (nom, taille, type, bin) VALUES (?, ?, ?, ?)");
             $req->execute(array($nom_image, $taille_image, $type_image, file_get_contents($chemin_temporaire)));
-
-            // Vous pouvez ajouter d'autres étapes ici, comme ajouter la publication associée à cette image dans une autre table, etc.
 
             // Rediriger vers une page de confirmation ou d'accueil
             header("Location: index.php");
