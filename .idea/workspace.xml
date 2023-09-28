@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2a3a9227-5a67-4546-b6cd-ab0c496a7cd3" name="Changes" comment="modif">
+      <change afterPath="$PROJECT_DIR$/_assets/config/config.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_assets/fonts/fonts.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_assets/images/icons/icons.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_assets/includes/includes.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_assets/libs/libs.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_assets/logs/logs.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_assets/scripts/scripts.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_assets/styles/inscription.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_assets/styles/landing.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_assets/styles/mdpOublie.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_assets/utils/class/class.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_assets/webfronts/webfronts.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/blog/controllers/models/models.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/blog/controllers/views/view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/bonprojet.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accueil.php" beforeDir="false" afterPath="$PROJECT_DIR$/accueil.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inscription_traitement.php" beforeDir="false" afterPath="$PROJECT_DIR$/inscription_traitement.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="fdd7562c-8004-4567-afb9-633f921b26d6" />
+        <option name="url" value="https://github.com/AudranSANTOSS22009730/projetweb" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/bin/php" />
+  <component name="ProjectId" id="2V3hiSvSb6xnOivyHAsnsWEDN3T" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/amuhome/S22009730/Bureau&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/_assets" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2a3a9227-5a67-4546-b6cd-ab0c496a7cd3" name="Changes" comment="" />
+      <created>1694070797550</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1694070797550</updated>
+      <workItem from="1694070798705" duration="4332000" />
+      <workItem from="1694079011106" duration="1352000" />
+      <workItem from="1694507785685" duration="2115000" />
+      <workItem from="1695284023392" duration="6162000" />
+      <workItem from="1695391551344" duration="627000" />
+      <workItem from="1695392194388" duration="3999000" />
+      <workItem from="1695882249573" duration="3791000" />
+    </task>
+    <task id="LOCAL-00001" summary="Ajout de fichier">
+      <created>1694508356645</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1694508356645</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Ajout de fichier">
+      <created>1695285834093</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1695285834093</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Ajout de fichier">
+      <created>1695391719463</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1695391719463</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Modification">
+      <created>1695392597281</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1695392597281</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Modification">
+      <created>1695395275767</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1695395275767</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Modification">
+      <created>1695395304555</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1695395304555</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Ajout de fichier" />
+    <MESSAGE value="Modification" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/modules.xml" />
+    <MESSAGE value="modif" />
+    <option name="LAST_COMMIT_MESSAGE" value="modif" />
+  </component>
+</project>

@@ -1,0 +1,163 @@
+Index: index.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/index.php b/index.php
+new file mode 100644
+--- /dev/null	(date 1694073576263)
++++ b/index.php	(date 1694073576263)
+@@ -0,0 +1,9 @@
++<!DOCTYPE html>
++<html>
++<head>
++    <title>PHP Test</title>
++</head>
++<body>
++<?php echo '<p>Hello World</p>'; ?>
++</body>
++</html>
+\ No newline at end of file
+Index: index.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/index.html b/index.html
+new file mode 100644
+--- /dev/null	(date 1694081491430)
++++ b/index.html	(date 1694081491430)
+@@ -0,0 +1,37 @@
++<!DOCTYPE html>
++<html lang="fr">
++<head>
++  <meta charset="UTF-8">
++  <meta name="viewport" content="width=device-width, initial-scale=1.0">
++  <title>Votre Site</title>
++  <link rel="stylesheet" href="styles.css">
++</head>
++<body>
++<header>
++  <div class="logo">
++    <h1>Votre Site</h1>
++  </div>
++  <div class="menu-dropdown">
++    <button class="menu-icon">&#8942;</button>
++    <div class="menu-content">
++      <ul>
++        <li><a href="#">FAQ</a></li>
++        <li><a href="#">Qui sommes-nous</a></li>
++        <li><a href="#">Contacter l'assistance</a></li>
++      </ul>
++    </div>
++  </div>
++  <div class="user-buttons">
++    <button class="message-button">Fil d'actualité</button>
++    <button class="message-button">Messages personnels</button>
++    <a href="Identification.php" class="login-button">S'identifier</a>
++  </div>
++</header>
++<main>
++  <!-- Le contenu principal de votre page -->
++</main>
++<footer>
++  <!-- Le pied de page de votre page -->
++</footer>
++</body>
++</html>
+Index: index.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/index.css b/index.css
+new file mode 100644
+--- /dev/null	(date 1694081499878)
++++ b/index.css	(date 1694081499878)
+@@ -0,0 +1,86 @@
++/* Réinitialisation des marges et des rembourrages par défaut */
++body, h1, h2, h3, ul, li {
++    margin: 0;
++    padding: 0;
++}
++
++body {
++    font-family: Arial, sans-serif;
++}
++
++header {
++    display: flex;
++    justify-content: space-between;
++    align-items: center;
++    background-color: #333;
++    color: #fff;
++    padding: 10px 20px;
++}
++
++.logo h1 {
++    font-size: 24px;
++}
++
++.menu-dropdown {
++    position: relative;
++}
++
++.menu-icon {
++    background: none;
++    border: none;
++    font-size: 24px;
++    color: #fff;
++    cursor: pointer;
++}
++
++.menu-content {
++    position: absolute;
++    top: 30px;
++    right: 0;
++    background-color: #333;
++    color: #fff;
++    display: none;
++    width: 150px;
++    border-radius: 4px;
++}
++
++.menu-content ul {
++    list-style: none;
++    padding: 0;
++}
++
++.menu-content ul li {
++    padding: 10px;
++    text-align: center;
++}
++
++.menu-content ul li a {
++    text-decoration: none;
++    color: #fff;
++    display: block;
++}
++
++.user-buttons {
++    display: flex;
++    align-items: center;
++}
++
++.message-button {
++    background-color: #007bff;
++    color: #fff;
++    border: none;
++    border-radius: 4px;
++    padding: 10px 20px;
++    margin-right: 10px;
++    cursor: pointer;
++}
++
++.login-button {
++    background-color: #333;
++    color: #fff;
++    text-decoration: none;
++    border: none;
++    border-radius: 4px;
++    padding: 10px 20px;
++    cursor: pointer;
++}

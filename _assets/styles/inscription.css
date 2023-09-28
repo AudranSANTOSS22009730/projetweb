@@ -1,0 +1,30 @@
+/* style.css */
+
+body {
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-form {
+    background-color: #ffd929;
+    color: black;
+    width: 340px;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 100);
+}
+
+.login-form h2 {
+    margin: 0 0 15px;
+}
+
+.btn {
+    font-size: 15px;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+}
