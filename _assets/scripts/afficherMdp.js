@@ -1,17 +1,11 @@
-<!-- JavaScript pour afficher/masquer le mot de passe -->
-/*
-<script>
-    const passwordField = document.getElementById('password');
-    const showPasswordCheckbox = document.getElementById('showPassword');
-    const passwordRetypeField = document.getElementById('password_retype');
-    const showPasswordRetypeCheckbox = document.getElementById('showPasswordRetype');
+const showPasswordCheckbox = document.getElementById('showPassword');
+const passwordRetypeField = document.getElementById('password_retype');
+const showPasswordRetypeCheckbox = document.getElementById('showPasswordRetype');
 
-    showPasswordCheckbox.addEventListener('change', function () {
+showPasswordCheckbox.addEventListener('change', function () {
     passwordField.type = this.checked ? 'text' : 'password';
 });
 
-    showPasswordRetypeCheckbox.addEventListener('change', function () {
+showPasswordRetypeCheckbox.addEventListener('change', function () {
     passwordRetypeField.type = this.checked ? 'text' : 'password';
 });
-</script>
-*/

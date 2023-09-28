@@ -1,5 +1,6 @@
 /* style.css */
 body {
+    background: black;
     background-color: black;
     display: flex;
     justify-content: center;
@@ -26,5 +27,5 @@ body {
     font-size: 15px;
     font-weight: bold;
     background-color: black;
-    color: white;
+    color: #000000;
 }
