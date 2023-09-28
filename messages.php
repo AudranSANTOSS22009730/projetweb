@@ -16,6 +16,7 @@ $messages = [
     <meta charset="UTF-8">
     <title>Messagerie de l'utilisateur</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="icon" href="wapp_icon.png" type="image/png">
 </head>
 <body>
 <?php include('includes/header.php'); ?>
