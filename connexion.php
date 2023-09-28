@@ -31,7 +31,8 @@ if(!empty($_POST['email']) && !empty($_POST['password'])) // Si il existe les ch
         if(mysqli_num_rows($result)== 1){
             $row = mysqli_fetch_assoc($result);
             if($row['email'] === $email && $row['password'] === $password){
-                header('Location: acceuil.php')
+                header('Location: acceuil.php');
+                exit();
             }else{
                 header("Location: index: index.php?error=Incorrect User name or password");
                 exit();
