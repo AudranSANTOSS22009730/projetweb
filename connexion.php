@@ -31,7 +31,7 @@ if(!empty($_POST['email']) && !empty($_POST['password'])) // Si il existe les ch
         if(mysqli_num_rows($result)== 1){
             $row = mysqli_fetch_assoc($result);
             if($row['email'] === $email && $row['password'] === $password){
-                header('Location: acceuil.php');
+                header("Location: accueil.php");
                 exit();
             }else{
                 header("Location: index: index.php?error=Incorrect User name or password");
@@ -51,35 +51,35 @@ if(!empty($_POST['email']) && !empty($_POST['password'])) // Si il existe les ch
     exit();
 }
 
-    /*
+/*
 
-    $email = strtolower($email); // email transformé en minuscule
-
-
-    // On regarde si l'utilisateur est inscrit dans la table utilisateurs
-    $check = $conn->prepare('SELECT pseudo, password, email FROM users  WHERE email = ?');
-    $check->execute(array($email));
-    $data = $check->fetch();
-    $row = $check->num_rows;
+$email = strtolower($email); // email transformé en minuscule
 
 
+// On regarde si l'utilisateur est inscrit dans la table utilisateurs
+$check = $conn->prepare('SELECT pseudo, password, email FROM users  WHERE email = ?');
+$check->execute(array($email));
+$data = $check->fetch();
+$row = $check->num_rows;
 
-    // Si > à 0 alors l'utilisateur existe
-    if($row > 0)
+
+
+// Si > à 0 alors l'utilisateur existe
+if($row > 0)
+{
+    // Si le mail est bon niveau format
+    if(filter_var($email, FILTER_VALIDATE_EMAIL))
     {
-        // Si le mail est bon niveau format
-        if(filter_var($email, FILTER_VALIDATE_EMAIL))
+        // Si le mot de passe est le bon
+        if(password_verify($password, $data['password']))
         {
-            // Si le mot de passe est le bon
-            if(password_verify($password, $data['password']))
-            {
-                // On créer la session et on redirige sur landing.php
-                $_SESSION['user'] = $data['token'];
-                header('Location: landing.php');
-                die();
-            }else{ header('Location: index.php?login_err=password'); die(); }
-        }else{ header('Location: index.php?login_err=email'); die(); }
-    }else{ header('Location: index.php?login_err=already'); die(); }
+            // On créer la session et on redirige sur landing.php
+            $_SESSION['user'] = $data['token'];
+            header('Location: landing.php');
+            die();
+        }else{ header('Location: index.php?login_err=password'); die(); }
+    }else{ header('Location: index.php?login_err=email'); die(); }
+}else{ header('Location: index.php?login_err=already'); die(); }
 }else{ header('Location: index.php'); die();} // si le formulaire est envoyé sans aucune données
 
-    */
+*/
