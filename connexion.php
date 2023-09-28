@@ -38,6 +38,7 @@ if(!empty($_POST['email']) && !empty($_POST['password'])) // Si il existe les ch
                 exit();
             }
         }else{
+
             header("Location: index: index.php?error=Incorrect User name or password");
             exit();
         }
