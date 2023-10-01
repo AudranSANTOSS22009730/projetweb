@@ -14,10 +14,8 @@ include('modules/blog/controlers/acceuil_controler.php');
     <link rel="icon" href="wapp_icon.png" type="image/png">
 </head>
 <body>
-<?php include('includes/header.php'); ?>
 
 <div class="container">
-    <?php include('includes/sidebar.php'); ?>
 
     <main>
         <!-- Barre de recherche -->
@@ -45,7 +43,5 @@ include('modules/blog/controlers/acceuil_controler.php');
         </div>
     </main>
 </div>
-
-<?php include('includes/footer.php'); ?>
 </body>
 </html>

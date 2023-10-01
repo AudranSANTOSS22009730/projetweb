@@ -1,35 +1,24 @@
-<!-- view.php -->
-
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Accueil - Mon Réseau Social</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <title>Connexion</title>
+    <link rel="stylesheet" type="text/css" href="../../../_assets/styles/connexion.css">
     <link rel="icon" href="wapp_icon.png" type="image/png">
 </head>
 <body>
-<?php include('header.php'); ?>
-
 <div class="container">
-    <?php include('sidebar.php'); ?>
-
-    <main>
-        <!-- Barre de recherche -->
-        <div class="search-bar">
-            <input type="text" placeholder="Rechercher...">
-            <button>Rechercher</button>
+    <form action="../controlers/connexion_controler.php" method="post" class="login-form"> <!-- Ajout de la classe "login-form" -->
+        <div class="form-group">
+            <label for="email">Adresse mail</label>
+            <input type="email" name="email" id="email" placeholder="votreadressemail@.com" required>
         </div>
-
-        <!-- Formulaire de connexion -->
-        <form action="controller.php" method="post">
-            <input type="email" name="email" placeholder="Email">
-            <input type="password" name="password" placeholder="Mot de passe">
-            <button type="submit">Se connecter</button>
-        </form>
-    </main>
+        <div class="form-group">
+            <label for="password">Mot de passe</label>
+            <input type="password" name="password" id="password" placeholder="motdepasse" required>
+        </div>
+        <button type="submit">Se connecter</button>
+    </form>
 </div>
-
-<?php include('footer.php'); ?>
 </body>
 </html>

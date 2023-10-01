@@ -2,8 +2,8 @@
 
 <?php
 session_start();
-require_once 'config.php';
-require_once 'model.php';
+require_once '../../../config.php';
+require_once '../../../model.php';
 
 if (!empty($_POST['email']) && !empty($_POST['password'])) {
     $email = $_POST['email'];
@@ -18,7 +18,7 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
         $_SESSION['user_email'] = $user['email'];
 
         // Redirigez l'utilisateur vers la page d'accueil
-        header("Location: acc.php");
+        header("Location: ../views/accueil_view.php");
         exit();
     } else {
         // L'authentification a échoué, redirigez vers la page d'erreur
@@ -31,3 +31,4 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
     exit();
 }
 ?>
+
