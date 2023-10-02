@@ -39,7 +39,5 @@ $user = [
         <!-- Afficher les publications de l'utilisateur ici -->
     </main>
 </div>
-
-<?php include('includes/footer.php'); ?>
 </body>
 </html>

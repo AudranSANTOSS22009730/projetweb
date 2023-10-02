@@ -4,17 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a3a9227-5a67-4546-b6cd-ab0c496a7cd3" name="Changes" comment="modif">
+    <list default="true" id="2a3a9227-5a67-4546-b6cd-ab0c496a7cd3" name="Changes" comment="mvc pour la connexion et l'acceuil">
+      <change afterPath="$PROJECT_DIR$/_assets/images/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/blog/controlers/inscription_controler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/blog/models/inscription_models.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/blog/views/inscription_view.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_09_2023_11_01__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_09_2023_11_01__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_09_2023_16_08__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_09_2023_16_08__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_assets/scripts/afficherMdp.js" beforeDir="false" afterPath="$PROJECT_DIR$/_assets/scripts/afficherMdp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_assets/styles/mdpOublie.css" beforeDir="false" afterPath="$PROJECT_DIR$/_assets/styles/mdpOublie.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/add_post.php" beforeDir="false" afterPath="$PROJECT_DIR$/add_post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/connexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/connexion.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inscription.php" beforeDir="false" afterPath="$PROJECT_DIR$/inscription.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/blog/controllers/models/models.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blog/models/models.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/blog/controllers/views/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blog/views/view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_assets/styles/connexion.css" beforeDir="false" afterPath="$PROJECT_DIR$/_assets/styles/connexion.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_assets/styles/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/_assets/styles/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blog/controlers/acceuil_controler.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blog/controlers/acceuil_controler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blog/controlers/connexion_controler.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blog/controlers/connexion_controler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blog/views/acceuil_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blog/views/acceuil_view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blog/views/connexion_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blog/views/connexion_view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profil.php" beforeDir="false" afterPath="$PROJECT_DIR$/profil.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,24 +63,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/amuhome/S22009730/Bureau",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/amuhome/S22009730/Bureau&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Mohamed MIESLI\PhpstormProjects\projetwebA\modules\blog\controlers" />
+      <recent name="C:\Users\Mohamed MIESLI\PhpstormProjects\projetwebA\modules\blog\views" />
       <recent name="$PROJECT_DIR$/_assets" />
     </key>
   </component>
@@ -93,6 +102,8 @@
       <workItem from="1695391551344" duration="627000" />
       <workItem from="1695392194388" duration="3999000" />
       <workItem from="1695882249573" duration="3791000" />
+      <workItem from="1696011265508" duration="8073000" />
+      <workItem from="1696149605063" duration="16544000" />
     </task>
     <task id="LOCAL-00001" summary="Ajout de fichier">
       <created>1694508356645</created>
@@ -136,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1695395304555</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="mvc pour la connexion et l'acceuil">
+      <created>1696014525810</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1696014525810</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,6 +176,7 @@
     <MESSAGE value="Modification" />
     <MESSAGE value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/modules.xml" />
     <MESSAGE value="modif" />
-    <option name="LAST_COMMIT_MESSAGE" value="modif" />
+    <MESSAGE value="mvc pour la connexion et l'acceuil" />
+    <option name="LAST_COMMIT_MESSAGE" value="mvc pour la connexion et l'acceuil" />
   </component>
 </project>

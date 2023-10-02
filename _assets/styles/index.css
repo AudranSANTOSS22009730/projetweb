@@ -7,6 +7,7 @@ body {
     height: 100vh;
     margin: 0;
 }
+
 .login-form {
     background-color: rgb(255, 213, 43);
     color: black;
@@ -15,16 +16,33 @@ body {
     border-radius: 5px;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
 }
+
 .login-form h2 {
     margin: 0 0 15px;
 }
-.form-control, .btn {
+
+.form-control,
+.btn {
     min-height: 38px;
     border-radius: 2px;
 }
+
 .btn {
     font-size: 15px;
     font-weight: bold;
     background-color: black;
     color: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.image_de_fond {
+    background-image: url("../images/2.png"); /* Assurez-vous que le chemin d'accès est correct */
+    background-size: cover; /* Remplacez "contain" par "cover" si nécessaire */
+    background-repeat: no-repeat;
+    width: 100%; /* Utilisez 100% pour couvrir toute la largeur */
+    height: 100vh;
 }
