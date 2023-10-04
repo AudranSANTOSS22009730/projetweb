@@ -1,31 +1,34 @@
 <?php
-class UserModel {
+class UserModel
+{
     private $conn;
 
-    public function __construct($conn) {
+    public function __construct($conn)
+    {
         $this->conn = $conn;
     }
 
-    public function getUserByEmailAndPassword($email, $password) {
+    public function getUserByEmailAndPassword($email, $password)
+    {
         try {
-            // Préparez la requête SQL en utilisant des paramètres nommés pour la sécurité
-            $query = "SELECT * FROM users WHERE email = :email AND password = :password";
+            // Prepare the SQL query with placeholders
+            $query = "SELECT * FROM users WHERE email = ? AND password = ?";
             $stmt = $this->conn->prepare($query);
 
-            // Liez les valeurs aux paramètres nommés
-            $stmt->bindParam(':email', $email, PDO::PARAM_STR);
-            $stmt->bindParam(':password', $password, PDO::PARAM_STR);
+            // Bind the parameters
+            $stmt->bind_param('ss', $email, $password);
 
-            // Exécutez la requête
+            // Execute the query
             $stmt->execute();
 
-            // Récupérez le résultat sous forme de tableau associatif
-            $user = $stmt->fetch(PDO::FETCH_ASSOC);
+            // Get the result as an associative array
+            $result = $stmt->get_result();
+            $user = $result->fetch_assoc();
 
             return $user;
-        } catch (PDOException $e) {
-            // Gérez les erreurs PDO ici
-            echo "Erreur PDO : " . $e->getMessage();
+        } catch (Exception $e) {
+            // Handle exceptions here
+            echo "Erreur : " . $e->getMessage();
             return null;
         }
     }

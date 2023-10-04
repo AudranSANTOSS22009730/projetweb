@@ -1,10 +1,20 @@
-<!-- view.php -->
-
 <?php
-// Inclure le contrôleur
-include('modules/blog/controlers/acceuil_controler.php');
+$publicationModel = new PublicationModel();
+$Publications = $publicationModel->getPublications();
+
+session_start();
+require_once '../../../config.php';
+require_once '../models/users_model.php';
+
+if (class_exists('PublicationModel')) {
+    $publicationModel = new PublicationModel();
+    $Publications = $publicationModel->getPublications();
+} else {
+    echo "PublicationModel class not found.";
+}
 ?>
 
+<!-- view.php -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,7 +43,7 @@ include('modules/blog/controlers/acceuil_controler.php');
 
         <!-- Publications des utilisateurs -->
         <div class="posts">
-            <?php foreach ($publications as $publication) : ?>
+            <?php foreach ($Publications as $publication) : ?>
                 <div class="post">
                     <p><strong><?php echo $publication['auteur']; ?></strong></p>
                     <p><?php echo $publication['contenu']; ?></p>

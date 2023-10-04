@@ -1,3 +1,7 @@
+if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
+// Redirect the authenticated user to the acceuil_view.php
+header("Location: modules/blog/views/acceuil_view.php");
+exit();
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -108,10 +112,9 @@
 </head>
 <body>
 <div class="links-container">
-    <p>Déjà inscrit ?</p>
-    <p>Pas encore membre ?</p>
     <a href="modules/blog/views/connexion_view.php" class="btn">Connexion</a>
-    <a href="inscription.php" class="btn">Inscription</a>
+    <a href="modules/blog/views/inscription_view.php" class="btn">Inscription</a>
 </div>
 </body>
 </html>
+
