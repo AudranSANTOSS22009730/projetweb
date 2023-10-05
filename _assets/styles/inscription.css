@@ -28,3 +28,39 @@ body {
     background-color: black;
     color: white;
 }
+/* ... (votre code CSS existant) ... */
+
+/* Style pour le niveau de sécurité du mot de passe */
+#password-strength {
+    margin-top: 10px; /* Espacement entre le champ de mot de passe et le niveau de sécurité */
+    font-weight: bold;
+}
+
+/* Définissez des couleurs spécifiques pour chaque niveau de sécurité */
+#password-strength span {
+    color: red; /* Couleur par défaut pour un mot de passe très faible */
+}
+
+#password-strength span[style*="orange"] {
+    color: orange; /* Couleur pour un mot de passe faible */
+}
+
+#password-strength span[style*="yellow"] {
+    color: yellow; /* Couleur pour un mot de passe modéré */
+}
+
+#password-strength span[style*="green"] {
+    color: green; /* Couleur pour un mot de passe fort */
+}
+
+#password-strength span[style*="blue"] {
+    color: blue; /* Couleur pour un mot de passe très fort */
+}
+
+#password-strength span[style*="purple"] {
+    color: purple; /* Couleur pour un mot de passe excellent */
+}
+.password-mismatch {
+    border: 1px solid red; /* Bordure rouge pour indiquer la non-correspondance */
+    background-color: #FFD9D9; /* Fond rouge clair */
+}

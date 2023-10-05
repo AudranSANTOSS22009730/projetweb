@@ -1,7 +1,4 @@
-if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
-// Redirect the authenticated user to the acceuil_view.php
-header("Location: modules/blog/views/acceuil_view.php");
-exit();
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

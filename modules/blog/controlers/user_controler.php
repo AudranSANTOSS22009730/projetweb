@@ -71,6 +71,33 @@ if (!empty($_POST['pseudo']) && !empty($_POST['email']) && !empty($_POST['passwo
     }
     // Vérification de l'existence de l'utilisateur
     $userModel = new UserModel($conn);
+    if ($userModel->isUserExists($email)) {
+        redirectWithError('already');
+    }
+    if (strlen($pseudo) > 100) {
+        redirectWithError('pseudo_length');
+    }
+
+    if (strlen($email) > 100 || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        redirectWithError('email');
+    }
+
+    if ($password !== $password_retype) {
+        redirectWithError('password');
+    }
+    $ip = $_SERVER['REMOTE_ADDR'];
+    $token = bin2hex(openssl_random_pseudo_bytes(64));
+
+    if ($userModel->addUser($pseudo, $email, $age, $genre, $password, $ip, $token)) {
+        header('Location: inscription.php?reg_err=success');
+        exit();
+    } else {
+        redirectWithError('database');
+    }
+} else {
+    header('Location: inscription.php');
+    exit();
+}
     if (!$userModel->isUserExists($email)) {
 
         // L'authentification réussit, vous pouvez stocker des informations dans la session si nécessaire
@@ -103,12 +130,5 @@ if (!empty($_POST['pseudo']) && !empty($_POST['email']) && !empty($_POST['passwo
             header('Location: inscription.php?reg_err=invalid');
             exit();
         }
-    } else {
-        header('Location: inscription.php?reg_err=already');
-        exit();
     }
-} else {
-    header('Location: inscription.php');
-    exit();
-}
 

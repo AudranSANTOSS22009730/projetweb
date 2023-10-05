@@ -5,6 +5,7 @@ $Publications = $publicationModel->getPublications();
 session_start();
 require_once '../../../config.php';
 require_once '../models/users_model.php';
+require_once '../models/PublicationModel.php';
 
 if (class_exists('PublicationModel')) {
     $publicationModel = new PublicationModel();
