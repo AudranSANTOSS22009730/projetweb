@@ -4,19 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a3a9227-5a67-4546-b6cd-ab0c496a7cd3" name="Changes" comment="résolution partiel du probleme de redirection vers la page d'acceuil.">
-      <change afterPath="$PROJECT_DIR$/_assets/scripts/SecureMdp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/blog/models/PublicationModel.php" afterDir="false" />
+    <list default="true" id="2a3a9227-5a67-4546-b6cd-ab0c496a7cd3" name="Changes" comment="tentative de résutlion du probleme ajout de fichier JS">
+      <change afterPath="$PROJECT_DIR$/_assets/styles/acceuil.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_assets/scripts/afficherMdp.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_assets/styles/inscription.css" beforeDir="false" afterPath="$PROJECT_DIR$/_assets/styles/inscription.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inscription_traitement.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/blog/controlers/user_controler.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blog/controlers/user_controler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/blog/models/users_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blog/models/users_model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/blog/views/MotDePasseOublie.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blog/views/MotDePasseOublie.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/blog/views/acceuil_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blog/views/acceuil_view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/blog/views/inscription_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blog/views/inscription_view.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,8 +21,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -163,7 +154,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696408439220</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="tentative de résutlion du probleme ajout de fichier JS">
+      <option name="closed" value="true" />
+      <created>1696490609602</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1696490609602</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,6 +186,7 @@
     <MESSAGE value="modif" />
     <MESSAGE value="mvc pour la connexion et l'acceuil" />
     <MESSAGE value="résolution partiel du probleme de redirection vers la page d'acceuil." />
-    <option name="LAST_COMMIT_MESSAGE" value="résolution partiel du probleme de redirection vers la page d'acceuil." />
+    <MESSAGE value="tentative de résutlion du probleme ajout de fichier JS" />
+    <option name="LAST_COMMIT_MESSAGE" value="tentative de résutlion du probleme ajout de fichier JS" />
   </component>
 </project>

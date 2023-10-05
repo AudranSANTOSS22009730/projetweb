@@ -1,58 +1,59 @@
-<?php
-$publicationModel = new PublicationModel();
-$Publications = $publicationModel->getPublications();
-
-session_start();
-require_once '../../../config.php';
-require_once '../models/users_model.php';
-require_once '../models/PublicationModel.php';
-
-if (class_exists('PublicationModel')) {
-    $publicationModel = new PublicationModel();
-    $Publications = $publicationModel->getPublications();
-} else {
-    echo "PublicationModel class not found.";
-}
-?>
-
-<!-- view.php -->
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>Accueil - Mon Réseau Social</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../../../_assets/styles/acceuil.css">
     <link rel="icon" href="wapp_icon.png" type="image/png">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
-
-<div class="container">
-
-    <main>
-        <!-- Barre de recherche -->
-        <div class="search-bar">
-            <input type="text" placeholder="Rechercher...">
-            <button>Rechercher</button>
-        </div>
-
-        <!-- Boutons de navigation -->
-        <div class="nav-buttons">
-            <button>Amis</button>
-            <button>Accueil</button>
-            <button>Messages</button>
-        </div>
-
-        <!-- Publications des utilisateurs -->
-        <div class="posts">
-            <?php foreach ($Publications as $publication) : ?>
-                <div class="post">
-                    <p><strong><?php echo $publication['auteur']; ?></strong></p>
-                    <p><?php echo $publication['contenu']; ?></p>
-                    <!-- Ajoutez ici des boutons pour les actions sur la publication (j'aime, commenter, etc.) -->
-                </div>
-            <?php endforeach; ?>
-        </div>
-    </main>
+<div class="navigation">
+    <ul>
+        <li class="list">
+            <a href="#">
+                    <span class="icon">
+                        <ion-icon name="happy-sharp"></ion-icon>
+                    </span>
+                <span class="text">Amis</span>
+            </a>
+        </li>
+        <li class="list">
+            <a href="#">
+                    <span class="icon">
+                        <ion-icon name="home-outline"></ion-icon>
+                    </span>
+                <span class="text">Home</span>
+            </a>
+        </li>
+        <li class="list">
+            <a href="#">
+                    <span class="icon">
+                        <ion-icon name="globe-sharp"></ion-icon>
+                    </span>
+                <span class="text">Groupes</span>
+            </a>
+        </li>
+        <li class="list">
+            <a href="#">
+                    <span class="icon">
+                        <ion-icon name="globe-sharp"></ion-icon>
+                    </span>
+                <span class="text">Photos</span>
+            </a>
+        </li>
+        <li class="list">
+            <a href="#">
+                    <span class="icon">
+                        <ion-icon name="notifications-outline"></ion-icon>
+                    </span>
+                <span class="text">Notifications</span>
+            </a>
+        </li>
+        <div class="indicator"></div>
+    </ul>
 </div>
+
 </body>
 </html>
