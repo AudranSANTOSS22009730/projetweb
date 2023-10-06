@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Accueil - Mon Réseau Social</title>
+    <title>Accueil - Mon RÃ©seau Social</title>
     <link rel="stylesheet" type="text/css" href="../../../_assets/styles/acceuil.css">
     <link rel="icon" href="wapp_icon.png" type="image/png">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
@@ -56,6 +56,7 @@
         <div class="indicator"></div>
     </div>
 </div>
+
 
 <script>
     const list = document.querySelectorAll('.list');
