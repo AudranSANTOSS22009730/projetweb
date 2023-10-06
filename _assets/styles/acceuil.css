@@ -2,19 +2,27 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,900');
 
 /* Style général de la page */
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #4d4d4d;
+    background: #222327;
 }
 
 /* Barre de navigation */
 .navigation {
+    position: relative;
     width: 400px;
-    height: 70px;
-    background: #f37a7a;
+    height: 60px;
+    background: #a69b1e;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,6 +41,7 @@ body {
     position: relative;
     width: 70px;
     height:60px;
+    z-index: 2;
     z-index: 2;
 }
 
@@ -58,29 +67,31 @@ body {
 }
 .navigation ul li.active a .icon
 {
-    transform: translateY(0);
-    color: #ffcc00;
+    transform: translateY(-32px);
+    color: #4eafc9;
 }
 .navigation ul li a .text{
     position: absolute;
     background: #ffcc00;
     color: black;
-    border-radius: 4px;
+    border-radius: 12px;
     font-weight: 400;
     font-size: 0.75em;
     letter-spacing: 0.05em;
     transition: 0.5s;
+    opacity: 0;
     transform: translateY(15px);
 }
-.navigation ul li.active a .text{
-    transform: translateY(-30px);
-    color: #ffcc00;;
+.navigation ul li.active a .text
+{
+    transform: translateY(-4px);
+    opacity: 1;
 }
 
 .indicator
 {
     position: absolute;
-    top: -50%;
+    top: -35%;
     width: 70px;
     height: 70px;
     background: white;
@@ -93,8 +104,45 @@ body {
 {
     content: '';
     position: absolute;
+    top: 5px;
+    left: -28px;
     width: 30px;
     height: 30px;
-    background: red;
+    background: transparent;
     border-radius: 50%;
+    box-shadow: 15px 18px white;
+}
+.indicator::after
+{
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: -28px;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 15px 18px white;
+}
+
+.navigation ul li:nth-child(1).active ~ .indicator
+{
+    transform: translateX(calc(70px * 0));
+}
+
+.navigation ul li:nth-child(2).active ~ .indicator
+{
+    transform: translateX(calc(70px * 1));
+}
+.navigation ul li:nth-child(3).active ~ .indicator
+{
+    transform: translateX(calc(70px * 2));
+}
+.navigation ul li:nth-child(4).active ~ .indicator
+{
+    transform: translateX(calc(70px * 3));
+}
+.navigation ul li:nth-child(5).active ~ .indicator
+{
+    transform: translateX(calc(70px * 4));
 }

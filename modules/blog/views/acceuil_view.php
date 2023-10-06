@@ -11,7 +11,7 @@
 <body>
 <div class="navigation">
     <ul>
-        <li class="list">
+        <li class="list active">
             <a href="#">
                     <span class="icon">
                         <ion-icon name="happy-sharp"></ion-icon>
@@ -54,6 +54,17 @@
         <div class="indicator"></div>
     </ul>
 </div>
+
+<script>
+    const list = document.querySelectorAll('.list');
+    function activeLink(){
+        list.forEach((item) =>
+        item.classList.remove('active');
+        this.classList.add('active')
+    }
+    list.forEach((item)
+    item.addEventListener('click', activeLink));
+</script>
 
 </body>
 </html>
