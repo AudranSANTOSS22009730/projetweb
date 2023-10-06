@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -108,10 +109,9 @@
 </head>
 <body>
 <div class="links-container">
-    <p>Déjà inscrit ?</p>
-    <p>Pas encore membre ?</p>
     <a href="modules/blog/views/connexion_view.php" class="btn">Connexion</a>
-    <a href="inscription.php" class="btn">Inscription</a>
+    <a href="modules/blog/views/inscription_view.php" class="btn">Inscription</a>
 </div>
 </body>
 </html>
+
