@@ -42,14 +42,14 @@ body {
     display: block;
     text-align: left;
     margin-bottom: 5px;
-    font-size: 10px;
+    font-size: 16px;
     font-weight: bold;
 }
 
 /* CSS pour le bouton de connexion */
 .login-form button[type="submit"] {
     background-color: black;
-    color: #ffd929;
+    color: yellow;
     font-size: 18px;
     font-weight: bold;
     padding: 12px 20px;
