@@ -1,81 +1,53 @@
-
-/* style.css */
-
 body {
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Utilisez la hauteur de la vue pour que le corps occupe toute la hauteur de l'écran */
     background-color: #202020;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("../images/2.png"); /* Ajout de l'image de fond */
-
-    background-size: cover; /* Redimensionner l'image pour couvrir l'écran entier */
-    background-position: center; /* Centrer l'image horizontalement et verticalement */
-    background-repeat: no-repeat; /* Ne pas répéter l'image */
-}
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
+    position: relative; /* Nécessaire pour positionner les boutons correctement */
 }
 
-
-.login-form h2 {
-    margin: 0 0 15px;
+/* Styles pour l'image de fond */
+.image_de_fond img {
+    width: 100vw; /* Utilisez 100% de la largeur de la vue pour remplir l'écran horizontalement */
+    height: 100vh; /* Utilisez 100% de la hauteur de la vue pour remplir l'écran verticalement */
+    position: absolute; /* Positionnement absolu pour l'image */
+    top: 0; /* Alignez l'image en haut de la page */
+    left: 0; /* Alignez l'image à gauche de la page */
+    z-index: -1; /* Mettez l'image en arrière-plan */
 }
+
+/* Styles pour les boutons */
 .btn {
-    display: flex; /* Utiliser l'affichage flexible pour créer une disposition horizontale */
-    justify-content: space-between; /* Espacez les éléments horizontalement */
-    align-items: center; /* Alignez les éléments verticalement au centre */
-    margin-top: 200px; /* Ajouter une marge en haut pour déplacer les boutons vers le bas */
-    /*margin-right: 50px; !* Espacement entre les liens *!*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20vh; /* Utilisez 20% de la hauteur de la vue pour le margin-top */
 }
 
 .btn a {
     font-size: 15px;
     font-weight: bold;
     background-color: rgb(255, 213, 43);
-    color: black; /* Texte noir par défaut */
-    margin: 5px; /* Ajout de marges autour des boutons */
-    padding: 15px 30px; /* Espacement intérieur des boutons agrandi */
-    text-decoration: none; /* Supprimer le soulignement par défaut */
+    color: black;
+    margin: 5px;
+    padding: 15px 30px;
+    text-decoration: none;
     width: 340px;
-    /*padding: 30px;*/
     border-radius: 5px;
     box-shadow: 0px 5px 5px rgb(255, 170, 47);
-    text-align: center; /* Centrer le contenu du formulaire */
-
-
+    text-align: center;
 }
 
 .btn:hover {
-    text-decoration: underline; /* Soulignement au survol */
+    text-decoration: underline;
+}
+
+/* Autres styles restants */
+.login-form h2 {
+    margin: 0 0 15px;
 }
 
 
-
-.form-control, .btn {
-    min-height: 38px;
-    border-radius: 2px;
-}
-
-/*.body image_de_fond {*/
-/*    background-image: url("../images/2.png"); !* Assurez-vous que le chemin d'accès est correct *!*/
-/*    background-size: cover; !* Remplacez "contain" par "cover" si nécessaire *!*/
-/*    background-repeat: no-repeat;*/
-/*    width: 100%; !* Utilisez 100% pour couvrir toute la largeur *!*/
-/*    height: 100vh;*/
-/*}*/
-
-
-/* Styles pour les écrans de taille moyenne et plus petits (tels que les appareils mobiles) */
-@media (max-width: 768px) {
-    body {
-        background-size: contain;
-        background-position: center;
-    }
-}
-
-* {
-    margin: 0;
-    padding: 0;
-}
