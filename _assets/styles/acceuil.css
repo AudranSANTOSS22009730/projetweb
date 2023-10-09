@@ -22,7 +22,7 @@ body {
     left: 600px;
     width: 400px;
     height: 60px;
-    background: #a69b1e;
+    background: #d06816;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -74,7 +74,7 @@ body {
 
 .navigation ul li a .text {
     position: absolute;
-    background: #ffcc00;
+    background: rgba(0, 0, 255, 0);
     color: black;
     border-radius: 12px;
     font-weight: 400;
