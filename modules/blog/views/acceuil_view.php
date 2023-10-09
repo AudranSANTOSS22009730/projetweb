@@ -39,9 +39,9 @@
             <li class="list">
                 <a href="#">
                     <span class="icon">
-                        <ion-icon name="globe-sharp"></ion-icon>
+                        <ion-icon name="person-outline"></ion-icon>
                     </span>
-                    <span class="text">Photos</span>
+                    <span class="text">Profil</span>
                 </a>
             </li>
             <li class="list">
