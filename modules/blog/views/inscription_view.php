@@ -7,77 +7,12 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../../_assets/styles/inscription.css">
+    <script src="../../../_assets/scripts/Inscription.js"></script>
     <script src="../../../_assets/scripts/SecureMdp.js"></script>
     <title>Inscription</title>
 </head>
 <body>
 <div class="login-form">
-    <?php
-    if(isset($_GET['reg_err']))
-    {
-        $err = htmlspecialchars($_GET['reg_err']);
-
-        switch($err)
-        {
-            case 'success':
-                ?>
-                <div class="alert alert-success">
-                    <strong>Succès</strong> Inscription réussie !
-                </div>
-                <?php
-                break;
-
-            case 'password':
-                ?>
-                <div class="alert alert-danger">
-                    <strong>Erreur</strong> Les mots de passe ne correspondent pas.
-                </div>
-                <?php
-                break;
-
-            case 'invalid':
-                ?>
-                <div class="alert alert-danger">
-                    <strong>Erreur</strong> Veuillez vérifier les données saisies.
-                </div>
-                <?php
-                break;
-
-            case 'email':
-                ?>
-                <div class="alert alert-danger">
-                    <strong>Erreur</strong> L'adresse email n'est pas valide.
-                </div>
-                <?php
-                break;
-
-            case 'email_length':
-                ?>
-                <div class="alert alert-danger">
-                    <strong>Erreur</strong> L'adresse email est trop longue.
-                </div>
-                <?php
-                break;
-
-            case 'pseudo_length':
-                ?>
-                <div class="alert alert-danger">
-                    <strong>Erreur</strong> Le pseudo est trop long.
-                </div>
-                <?php
-                break;
-
-            case 'already':
-                ?>
-                <div class="alert alert-danger">
-                    <strong>Erreur</strong> Un compte avec cette adresse email existe déjà.
-                </div>
-                <?php
-                break;
-        }
-    }
-    ?>
-
     <form action="inscription_view.php" method="post">
         <h2 class="text-center">Inscription</h2>
         <div class="form-group">
@@ -117,7 +52,7 @@
         </div>
     </form>
     <p class="text-center">Déjà inscrit ? <a href="connexion_view.php">Connectez-vous ici</a></p>
+    <p>Pas encore inscrit ? <a href="acceuil_view.php" class="btn">Acceuil raccourcis teh les fous</a></p>
 </div>
 </body>
 </html>
-g

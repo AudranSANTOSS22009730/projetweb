@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Accueil - Mon RÃ©seau Social</title>
+    <title>Accueil - Wap</title>
     <link rel="stylesheet" type="text/css" href="../../../_assets/styles/acceuil.css">
     <link rel="icon" href="wapp_icon.png" type="image/png">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
@@ -37,7 +37,7 @@
                 </a>
             </li>
             <li class="list">
-                <a href="#">
+                <a href="profil.view.php">
                     <span class="icon">
                         <ion-icon name="person-outline"></ion-icon>
                     </span>
