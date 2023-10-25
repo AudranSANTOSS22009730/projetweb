@@ -4,6 +4,14 @@ $username = "wap";
 $password = "wapiutaix";
 $dbname = "wap_bd"; //
 
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname;charset=utf8", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch(PDOException $e) {
+    echo "La connexion a échoué : " . $e->getMessage();
+
+}
+/*
 // Créez une connexion à la base de données
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -11,14 +19,6 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if (!$conn) {
     echo "Connection failed!";
 }
+*/
 
-/*
-try {
-    $bdd = new PDO("mysql:host=$servername;dbname=$dbname;charset=utf8", $username, $password);
-    $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Connexion établie avec succès";
-} catch(PDOException $e) {
-    echo "La connexion a échoué : " . $e->getMessage();
-
-}*/
 ?>

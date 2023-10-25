@@ -1,0 +1,87 @@
+/* style.css */
+
+body {
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-form {
+    background-color: #ffd929;
+    color: black;
+    width: 340px;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 100);
+}
+
+.login-form h2 {
+    margin: 0 0 15px;
+}
+
+.btn {
+    font-size: 15px;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+}
+/* ... (votre code CSS existant) ... */
+
+/* Style pour le niveau de sécurité du mot de passe */
+#password-strength {
+    margin-top: 10px; /* Espacement entre le champ de mot de passe et le niveau de sécurité */
+    font-weight: bold;
+}
+
+/* Définissez des couleurs spécifiques pour chaque niveau de sécurité */
+#password-strength span {
+    color: red; /* Couleur par défaut pour un mot de passe très faible */
+}
+
+#password-strength span[style*="orange"] {
+    color: orange; /* Couleur pour un mot de passe faible */
+}
+
+#password-strength span[style*="yellow"] {
+    color: yellow; /* Couleur pour un mot de passe modéré */
+}
+
+#password-strength span[style*="green"] {
+    color: green; /* Couleur pour un mot de passe fort */
+}
+
+#password-strength span[style*="blue"] {
+    color: blue; /* Couleur pour un mot de passe très fort */
+}
+
+#password-strength span[style*="purple"] {
+    color: purple; /* Couleur pour un mot de passe excellent */
+}
+.password-mismatch {
+    border: 1px solid red; /* Bordure rouge pour indiquer la non-correspondance */
+    background-color: #FFD9D9; /* Fond rouge clair */
+}
+.email-suggestion {
+    cursor: pointer;
+    padding: 8px;
+}
+
+.email-suggestion:hover {
+    background-color: #f0f0f0;
+}
+/* Vous pouvez ajouter cela à la fin de votre fichier "inscription.css" */
+
+#email-suggestions {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #aaa;
+    width: 340px; /* Vous pouvez ajuster cette largeur en fonction de vos besoins */
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+
+

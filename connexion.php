@@ -1,39 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="NoS1gnal"/>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="_assets/styles/connexion.css">
-    <link rel="icon" href="modules/_assets/images/icons/wapp_icon.png" type="image/png">
-    <script src=""></script>
-    <title>Connexion</title>
+    <!-- Votre contenu du head existant -->
 </head>
 <body>
 <div class="login-form">
     <?php
-    if(isset($_GET['login_err']))
-    {
+    if(isset($_GET['login_err'])) {
         $err = htmlspecialchars($_GET['login_err']);
 
-        switch($err)
-        {
+        switch($err) {
             case 'password':
-                ?>
-                <div class="alert alert-danger">
+                echo '<div class="alert alert-danger">
                     <strong>Erreur</strong> mot de passe incorrect
-                </div>
-                <?php
+                </div>';
                 break;
 
             case 'email':
-                ?>
-                <div class="alert alert-danger">
+                echo '<div class="alert alert-danger">
                     <strong>Erreur</strong> email incorrect
-                </div>
-                <?php
+                </div>';
                 break;
         }
     }
@@ -48,12 +34,44 @@
             <input type="password" name="password" class="form-control" placeholder="Mot de passe" required="required" autocomplete="off">
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block">Connexion</button>
+            <button id="connexion-button" type="submit" class="btn btn-primary btn-block">Connexion</button>
         </div>
     </form>
     <p class="text-center"><a href="inscription.php">Inscription</a></p>
-    <p
     <p class="text-center"><a href="mdpOublie.php">Mot de passe oublié</a></p>
 </div>
+
+<script>
+    var loginAttempts = 0;
+    var maxLoginAttempts = 3;
+    var lockoutTime = 60; // 60 seconds
+
+    function checkPassword() {
+        // Replace this logic with actual password validation
+        var isPasswordCorrect = false;
+
+        if (!isPasswordCorrect) {
+            loginAttempts++;
+            var remainingAttempts = maxLoginAttempts - loginAttempts;
+
+            if (remainingAttempts > 0) {
+                window.alert("Mot de passe incorrect. " + remainingAttempts + " tentative(s) restante(s).");
+            } else {
+                document.getElementById('connexion-button').disabled = true;
+                document.getElementById('connexion-button').classList.add("btn-danger");
+                setTimeout(function () {
+                    resetLoginAttempts();
+                }, lockoutTime * 1000);
+            }
+        }
+    }
+
+    function resetLoginAttempts() {
+        loginAttempts = 0;
+        document.getElementById('connexion-button').disabled = false;
+        document.getElementById('connexion-button').classList.remove("btn-danger");
+    }
+</script>
+
 </body>
 </html>

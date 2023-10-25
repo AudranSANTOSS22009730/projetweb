@@ -4,8 +4,8 @@ if(isset($_GET['id']) AND !empty($_GET['id'])) {
     $get_id = htmlspecialchars($_GET['id']);
     $article = $conn->prepare('SELECT * FROM articles WHERE id = ?');
     $article->execute(array($get_id));
-    if($article->num_rows == 1) {
-        $article = $article->fetch_assoc();
+    if($article->rowCount() == 1) {
+        $article = $article->fetch();
         $titre = $article['titre'];
         $contenu = $article['contenu'];
     } else {
@@ -18,11 +18,18 @@ if(isset($_GET['id']) AND !empty($_GET['id'])) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Accueil</title>
+    <title>Article</title>
     <meta charset="utf-8">
 </head>
 <body>
 <h1><?= $titre ?></h1>
 <p><?= $contenu ?></p>
+<br>
+<!-- Bouton pour retourner à l'accueil, css à modifier c'est moche -->
+<br>
+<a href="modules/blog/views/acceuil_view.php"><button>Retour à l'accueil</button></a>
+
 </body>
 </html>
+
+

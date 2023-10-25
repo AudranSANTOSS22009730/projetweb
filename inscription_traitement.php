@@ -3,7 +3,7 @@ require_once 'config.php'; // Inclut la connexion à la base de données
 //var_dump($_POST);
 //die();
 // Vérifie si les variables requises existent et ne sont pas vides
-if (!empty($_POST['pseudo'])  && !empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['password_retype']) && !empty($_POST['age']) && !empty($_POST['genre'])) {
+if (!empty($_POST['pseudo']) && !empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['password_retype']) && !empty($_POST['age']) && !empty($_POST['genre'])) {
     // Patch XSS
     $pseudo = htmlspecialchars($_POST['pseudo']);
     $email = htmlspecialchars($_POST['email']);
@@ -13,16 +13,15 @@ if (!empty($_POST['pseudo'])  && !empty($_POST['email']) && !empty($_POST['passw
     $password_retype = htmlspecialchars($_POST['password_retype']);
 
     // Vérifie si l'utilisateur existe
-    $check = $conn->prepare('SELECT pseudo, age, genre, email, password FROM users WHERE email = ?');
-    $check->bind_param('s', $email);
+    $check = $conn->prepare('SELECT pseudo, age, genre, email, password FROM users WHERE email = :email');
+    $check->bindParam(':email', $email, PDO::PARAM_STR);
     $check->execute();
-    $result = $check->get_result();
-    $row = $result->num_rows;
+    $result = $check->fetchAll(PDO::FETCH_ASSOC);
 
     $email = strtolower($email); // Convertit l'e-mail en minuscules pour éviter les doublons d'adresses e-mail
 
     // Si la requête ne renvoie aucun résultat, l'utilisateur n'existe pas
-    if ($row == 0) {
+    if (count($result) == 0) {
         if (strlen($pseudo) <= 100) { // Vérifie que la longueur du 'nom' est inférieure ou égale à 100
             if (strlen($email) <= 100) { // Vérifie que la longueur de 'email' est inférieure ou égale à 100
                 if (filter_var($email, FILTER_VALIDATE_EMAIL)) { // Vérifie si l'e-mail est au bon format
@@ -39,8 +38,15 @@ if (!empty($_POST['pseudo'])  && !empty($_POST['email']) && !empty($_POST['passw
                         $token = bin2hex(openssl_random_pseudo_bytes(64));
 
                         // Insère les données dans la base de données
-                        $insert = $conn->prepare('INSERT INTO users(pseudo, password, email, age, genre, ip, token) VALUES(?, ?, ?, ?, ?, ?, ?)');
-                        $insert->bind_param('sssssss', $pseudo, $password, $email, $age, $genre, $ip, $token);
+                        $insert = $conn->prepare('INSERT INTO users(pseudo, password, email, age, genre, ip, token) VALUES(:pseudo, :password, :email, :age, :genre, :ip, :token)');
+                        $insert->bindParam(':pseudo', $pseudo, PDO::PARAM_STR);
+                        $insert->bindParam(':password', $password, PDO::PARAM_STR);
+                        $insert->bindParam(':email', $email, PDO::PARAM_STR);
+                        $insert->bindParam(':age', $age, PDO::PARAM_INT);
+                        $insert->bindParam(':genre', $genre, PDO::PARAM_STR);
+                        $insert->bindParam(':ip', $ip, PDO::PARAM_STR);
+                        $insert->bindParam(':token', $token, PDO::PARAM_STR);
+
                         $insert->execute();
 
                         // Redirection avec un message de succès
@@ -63,9 +69,8 @@ if (!empty($_POST['pseudo'])  && !empty($_POST['email']) && !empty($_POST['passw
             die();
         }
     }
-    } else {
-        header('Location: inscription.php?reg_err=already');
-        die();
-
+} else {
+    header('Location: inscription.php?reg_err=already');
+    die();
 }
 ?>

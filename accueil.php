@@ -17,10 +17,6 @@ $articles = $conn->query('SELECT * FROM articles ORDER BY date_time_publication 
     <?php } ?>
     <ul>
 
-
-
-
-
         <!-- Bouton pour rediger un article, css à modifier c'est moche -->
         <a href="redaction.php"><button>Rédiger un article</button></a>
 

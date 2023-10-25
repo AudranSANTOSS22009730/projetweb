@@ -81,7 +81,7 @@
             <input type="text" name="email" id="email" class="form-control" placeholder="Email" required="required" autocomplete="off">
             <!-- Suggestions pour l'e-mail -->
             <div id="email-suggestions" style="display: none;">
-                <div class="email-suggestion">Gmail</div>
+                <div class="email-suggestion">gmail.com</div>
                 <div class="email-suggestion">GMX</div>
                 <div class="email-suggestion">ProtonMail</div>
                 <div class="email-suggestion">Yahoo Mail</div>
@@ -105,6 +105,9 @@
             <input type="password" name="password" id="password" class="form-control" placeholder="Mot de passe" required="required" autocomplete="off">
         </div>
         <div class="form-group">
+            <span id="password-error" class="error-message" style="display:none;">Le mot de passe est trop faible.</span>
+        </div>
+        <div class="form-group">
             <input type="checkbox" id="showPassword"> Afficher le mot de passe
         </div>
         <div class="form-group">
@@ -120,6 +123,34 @@
     <p class="text-center">Déjà inscrit ? <a href="connexion.php">Connectez-vous ici</a></p>
 </div>
 <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const formulaire = document.getElementById("formulaire-inscription");
+        const erreurUtilisateur = document.getElementById("erreur-utilisateur");
+
+        formulaire.addEventListener("submit", function(event) {
+            event.preventDefault(); // Empêche l'envoi du formulaire par défaut
+
+            const pseudo = document.querySelector('input[name="pseudo"]').value; // Récupère la valeur du champ pseudo
+
+            // Effectuer une requête AJAX pour vérifier si le nom d'utilisateur est déjà utilisé
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", "verification_utilisateur.php", true); // Assurez-vous de créer "verification_utilisateur.php" pour gérer la vérification
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    if (xhr.responseText === "utilisateur_existe") {
+                        // Nom d'utilisateur déjà utilisé, afficher le message d'erreur
+                        erreurUtilisateur.style.display = "block";
+                    } else {
+                        // Le nom d'utilisateur est unique, continuez avec l'inscription
+                        formulaire.submit(); // Soumettez le formulaire
+                    }
+                }
+            };
+            xhr.send("pseudo=" + encodeURIComponent(pseudo));
+        });
+    });
+
     // Fonction pour afficher ou masquer le mot de passe
     function togglePasswordVisibility(inputId, checkboxId) {
         const passwordInput = document.getElementById(inputId);
@@ -132,24 +163,22 @@
         }
     }
 
-    function checkPasswordStrength() {
+    document.addEventListener("DOMContentLoaded", function() {
         const passwordInput = document.getElementById("password");
-        const passwordStrength = document.getElementById("password-strength");
-        const password = passwordInput.value;
+        const passwordError = document.getElementById("password-error");
 
-        const passwordPattern = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{10,}$/;
+        passwordInput.addEventListener("input", function() {
+            const password = passwordInput.value;
+            const passwordPattern = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{10,}$/;
 
-        if (passwordPattern.test(password)) {
-            passwordStrength.innerHTML = "Fort";
-            passwordStrength.style.color = "green";
-            return true; // Le formulaire est soumis
-        } else {
-            alert("Le mot de passe est faible. Il doit contenir au moins 10 caractères, dont des majuscules, des minuscules, des chiffres et des caractères spéciaux.");
-            passwordStrength.innerHTML = "Faible (min. 10 caractères, majuscules, minuscules, chiffres, caractères spéciaux)";
-            passwordStrength.style.color = "red";
-            return false; // Le formulaire n'est pas soumis
-        }
-    }
+            if (passwordPattern.test(password)) {
+                passwordError.style.display = "none";
+            } else {
+                passwordError.style.display = "block";
+            }
+        });
+    });
+
 
 
     // Ajouter des écouteurs d'événements aux cases à cocher
@@ -201,5 +230,6 @@
         });
     }
 </script>
+<script src="_assets/scripts/suggestion_mail.js"></script>
 </body>
 </html>
