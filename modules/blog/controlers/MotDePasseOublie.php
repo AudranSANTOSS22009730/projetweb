@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="NoS1gnal"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="../../../_assets/styles/mdpOublie.css">
+    <link rel="stylesheet" type="text/css" href="_assets/styles/mdpOublie.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="icon" href="wapp_icon.png" type="image/png">
     <title>Mot de passe oublié</title>
@@ -21,7 +21,7 @@
             <button type="submit" class="btn btn-primary btn-block">Suivant</button>
         </div>
     </form>
-    <p class="text-center"><a href="connexion_view.php">Se connecter</a></p>
+    <p class="text-center"><a href="index.php">Se connecter</a></p>
 </div>
 </body>
 </html>

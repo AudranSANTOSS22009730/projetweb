@@ -1,14 +1,9 @@
 <?php
 namespace models;
 
-use PDO;
-use PDOException;
-include '..\..\..\config.php';
-
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-
 
 
 // Créez une connexion à la base de données
@@ -16,28 +11,37 @@ error_reporting(E_ALL);
 class Users {
     private $conn;
 
-    public function __construct($conn) {
-        // Initialisation de la propriété "$conn" de l'objet courant avec la valeur de "$conn" passé en argument
+
+    public function __construct($conn)
+    {
         $this->conn = $conn;
     }
 
-    // Je crée une fonction privée nommée "connectwap_bd" pour établir une connexion à une base de données SQLite.
-    private function connectwap_bd() {
+    public function getUserByEmailAndPassword($email, $password)
+    {
         try {
-            $servername = "mysql-wap.alwaysdata.net";
-            $username = "wap";
-            $password = "wapiutaix";
-            $dbname = "wap_bd";
-            $conn = new PDO($servername, $username, $password, $dbname);
-            // Si la connexion réussit, je peux l'utiliser pour effectuer des opérations sur la base de données.
+            // Prepare the SQL query with placeholders
+            $query = "SELECT * FROM users WHERE email = ? AND password = ?";
+            $stmt = $this->conn->prepare($query);
 
-            // Je retourne l'objet de connexion pour une utilisation future.
-            return $conn;
-        } catch (PDOException $e) {
+            // Bind the parameters
+            $stmt->bind_param('ss', $email, $password);
+
+            // Execute the query
+            $stmt->execute();
+
+            // Get the result as an associative array
+            $result = $stmt->get_result();
+            $user = $result->fetch_assoc();
+
+            return $user;
+        } catch (Exception $e) {
+            // Handle exceptions here
+            echo "Erreur : " . $e->getMessage();
             return null;
         }
     }
-// Déclaration d'une méthode constructeur publique
+
 
     public function UtilisateurExistant($pseudo)
     {
@@ -73,29 +77,8 @@ class Users {
         // J'exécute la requête préparée.
         $stmt->execute();
     }
-    public function  AjoutUtilisateur($pseudo, $email, $age, $genre, $password, $ip, $token, $conn) {
+    public function AjoutUtilisateur() {
 
-        //$hashed_password = password_hash($password, PASSWORD_DEFAULT);
-        $insert = $conn->prepare('INSERT INTO users(pseudo, password, email, age, genre, ip, token) VALUES(?, ?, ?, ?, ?, ?, ?)');
-        $insert->bind_param('sssssss', $pseudo, $password, $email, $age, $genre, $ip, $token);
-        $stmt = $this->connectwap_bd()->prepare(insert);
-        $insert->execute();
-
-        $stmt -> bindParam('email', $email, PDO::PARAM_STR);
-        //$stmt -> bindParam('password', $hashed_password, PDO::PARAM_STR);
-        $stmt -> bindParam('pseudo', $pseudo, PDO::PARAM_STR);
-        $existingUserByEmail = $this->MailExistant($email);
-        $existingUserByPseudo = $this->UtilisateurExistant($pseudo);
-
-        if ($existingUserByEmail) {
-            header('Location: ../../index.php?erreur=email_existant');
-            exit;
-        } elseif ($existingUserByPseudo) {
-            header('Location: ../../index.php?erreur=pseudo');
-            exit;
-        } else {
-        $Users = new Users();
-        $Users -> TrouverUtilsateur();
         if (!empty($_POST['pseudo'])  && !empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['password_retype']) && !empty($_POST['age']) && !empty($_POST['genre'])) {
         // Patch XSS
         $pseudo = htmlspecialchars($_POST['pseudo']);
@@ -162,59 +145,58 @@ class Users {
 
 }
 
-    }
-    }
-
-    public function TrouverUtilsateur($email, $pseudo) {
-        $query = "SELECT * FROM users WHERE (email = '$email' OR pseudo = $pseudo)";
-        $stmt = $this->connectwap_bd() -> prepare($query);
-        $stmt -> bindParam('email', $email, PDO::PARAM_STR);
-        $stmt -> bindParam('pseudo', $pseudo, PDO::PARAM_STR);
-        $stmt -> execute();
-
-
-        $utilisateur = $stmt->fetch(PDO::FETCH_ASSOC);
-        if ($pseudo && VerificationCode($email, $utilisateur)){
-            session_start();
-            $_SESSION['utilisateur_conn'] = true;
-            $_SESSION['email'] = $utilisateur ['email'];
-            $_SESSION['pseudo'] = $utilisateur ['pseudo'];
-
-            header('Location: ../views/acceuil_views.php');
-            exit;
-        } else {
-            header('Location: ../../index.php?erreur= motdepasseincorrect');
-            exit;
-        }
-
+    //}
     }
 
-    public function VerificationCode($email, $password) {
-        // Requête SQL pour vérifier le code de réinitialisation du mot de passe
-        $query = "SELECT codeMDPOublie FROM users WHERE email= email";
-        $stmt = $this->connectwap_bd()->prepare($query);
-        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
-        $stmt->execute();
 
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        if ($row) {
-            $codewap_bd = $row['codeMDPOublie'];
-            if ($codewap_bd == $password) {
-                // Le code est correct, rediriger vers la page de changement de mot de passe
-                header('Location: ../views/ChangementMDP.php');
-                exit(); // Assurez-vous de quitter le script après la redirection.
-            } else {
-                // Le code est incorrect, vous pouvez gérer l'erreur ici (par exemple, afficher un message d'erreur)
-                header('Location: ../../index.php?erreur=code_errone');
-                exit;
+    public function TrouverUtilsateur($email, $pseudo)
+    {
+        if (!empty($_POST['email']) && !empty($_POST['password'])) // Si il existe les champs email, password et qu'il sont pas vident
+        {
+            function validate($data)
+            {
+                $data = trim($data);
+                $data = stripslashes($data);
+                $data = htmlspecialchars($data);
+                return $data;
             }
-        } else {
-            // L'utilisateur avec cet e-mail n'existe pas, vous pouvez gérer l'erreur ici
-            header('Location: ../../index.php?erreur=email_inexistant');
-            exit;
+
+            // Patch XSS
+            $email = validate($_POST['email']);
+            $password = validate($_POST['password']);
+
+            if (empty($email)) {
+                header("Location: index.php?error=User Name is required");
+                exit();
+            } else if (empty($password)) {
+                header("Location: index.php?error= Password is required");
+                exit();
+            } else {
+                $sql = "SELECT * FROM users WHERE email = '$email' AND password = '$password'";
+                $result = mysqli_query($conn, $sql);
+
+                if (mysqli_num_rows($result) == 1) {
+                    $row = mysqli_fetch_assoc($result);
+                    if ($row['email'] === $email && $row['password'] === $password) {
+                        header("Location: ../../../accueil.php");
+                        exit();
+                    } else {
+                        header("Location: index: index.php?error=Incorrect User name or password");
+                        exit();
+                    }
+                } else {
+                    header("Location: index: index.php?error=Incorrect User name or password");
+                    exit();
+                }
+            }
         }
     }
+
+
+
+
+
+
     public function resetMotDePasse($email)
     {
         if (!$this->MailExistant($email)) {

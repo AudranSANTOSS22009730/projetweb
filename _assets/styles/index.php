@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,21 +13,13 @@
 
 </head>
 <body>
-<div class="links-container">
-    <div class="login-form">
-
-
+    <div class="texte"
+        <p>Déjà inscrit ?</p>
+        <p>Pas encore membre ?</p>
     </div>
-
-    <div class="image_de_fond">
-        <!--     Contenu de votre page avec l'image de fond ici-->
-        <img src="../../../_assets/images/2.png" alt="image de fond">
+    <div class="links-container">
+        <a href="connexion.php" class="btn">Connexion</a>
+        <a href="inscription.php" class="btn">Inscription</a>
     </div>
-    <div class="btn">
-        <a href="connexion_view.php" class="btn">Connexion</a>
-        <a href="inscription_view.php" class="btn">Inscription</a>
-    </div>
-
-
 </body>
 </html>

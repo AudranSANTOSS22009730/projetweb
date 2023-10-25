@@ -1,77 +1,50 @@
+<!-- accueil_view.php -->
+<?php
+include "../../../config.php";
+
+
+$articles = $conn->query('SELECT * FROM articles ORDER BY date_time_publication DESC');
+?>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Accueil - Wap</title>
-    <link rel="stylesheet" type="text/css" href="../../../_assets/styles/acceuil.css">
+    <title>Accueil</title>
+    <link rel="stylesheet" type="text/css" href="../_assets/styles/accueil.css">
     <link rel="icon" href="wapp_icon.png" type="image/png">
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
-<div class="wrapper">
-    <div class="navigation">
+
+<div class="container">
+    <main>
+        <!-- Barre de recherche -->
+        <div class="search-bar">
+            <input type="text" placeholder="Rechercher...">
+            <button>Rechercher</button>
+        </div>
+
+        <!-- Boutons de navigation -->
+        <div class="nav-buttons">
+            <button onclick="location.href='amis_page.php'">Amis</button>
+            <button onclick="location.href='accueil_page.php'">Accueil</button>
+            <button onclick="location.href='messages_page.php'">Messages</button>
+            <button onclick="location.href='profil_page.php'">Profil</button>
+        </div>
+        <!-- Ajouté juste avant les publications des utilisateurs -->
+
+
+        <?php while($a = $articles->fetch_assoc()) { ?>
+            <li><a href="../../../article.php?id=<?= $a['id'] ?>"><?= $a['titre'] ?></a> | <a href="../../../redaction.php?edit=<?= $a['id'] ?>">Modifier</a> | <a href="../../../supprimer.php?id=<?= $a['id'] ?>">Supprimer</a></li>
+        <?php } ?>
         <ul>
-            <li class="list active">
-                <a href="#">
-                    <span class="icon">
-                        <ion-icon name="happy-sharp"></ion-icon>
-                    </span>
-                    <span class="text">Amis</span>
-                </a>
-            </li>
-            <li class="list">
-                <a href="#">
-                    <span class="icon">
-                        <ion-icon name="home-outline"></ion-icon>
-                    </span>
-                    <span class="text">Home</span>
-                </a>
-            </li>
-            <li class="list">
-                <a href="#">
-                    <span class="icon">
-                        <ion-icon name="chatbubble-outline"></ion-icon>
-                    </span>
-                    <span class="text">Messages</span>
-                </a>
-            </li>
-            <li class="list">
-                <a href="profil.view.php">
-                    <span class="icon">
-                        <ion-icon name="person-outline"></ion-icon>
-                    </span>
-                    <span class="text">Profil</span>
-                </a>
-            </li>
-            <li class="list">
-                <a href="#">
-                    <span class="icon">
-                        <ion-icon name="notifications-outline"></ion-icon>
-                    </span>
-                    <span class="text">Notifications</span>
-                </a>
-            </li>
-        </ul>
-        <div class="indicator"></div>
-    </div>
+            <!-- Bouton pour rediger un article, css à modifier c'est moche -->
+            <a href="../../../redaction.php"><button>Rédiger un article</button></a>
+
+
+
+
+        </div>
+    </main>
 </div>
-
-
-<script>
-    const list = document.querySelectorAll('.list');
-    function activeLink() {
-        list.forEach((item) => {
-            item.classList.remove('active');
-        });
-        this.classList.add('active');
-    }
-    list.forEach((item) => {
-        item.addEventListener('click', activeLink);
-    });
-</script>
-
-
-
 </body>
 </html>

@@ -7,7 +7,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="_assets/styles/connexion.css">
-    <link rel="icon" href="wapp_icon.png" type="image/png">
+    <link rel="icon" href="modules/_assets/images/icons/wapp_icon.png" type="image/png">
+    <script src=""></script>
     <title>Connexion</title>
 </head>
 <body>

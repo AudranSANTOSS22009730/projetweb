@@ -1,8 +1,6 @@
 <?php
 // Inclure ici la connexion à la base de données
 include("connexion.php");
-include("connex.php");
-include "config.php";
 
 // Vérifier si le formulaire a été soumis
 if(isset($_POST["valider"])) {
@@ -18,7 +16,7 @@ if(isset($_POST["valider"])) {
         $extension = pathinfo($nom_image, PATHINFO_EXTENSION);
 
         if (in_array($extension, $extensions_valides)){
-            $req = $conn-> prepare("INSERT INTO images (nom, taille, type, bin) VALUES (?, ?, ?, ?)");
+            $req = $pdo-> prepare("INSERT INTO images (nom, taille, type, bin) VALUES (?, ?, ?, ?)");
         }
         // Vérifier si le fichier est une image (vous pouvez ajouter d'autres vérifications ici)
         if (strpos($type_image, 'image') !== false) {
