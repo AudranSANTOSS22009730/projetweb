@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,21 +14,10 @@
 </head>
 <body>
 <div class="links-container">
-    <div class="login-form">
-
-
-    </div>
-
-    <div class="image_de_fond">
-        <!--     Contenu de votre page avec l'image de fond ici-->
-        <img src="_assets/images/2.png" alt="image de fond">
-    </div>
-    <div class="btn">
-        <a href="modules/blog/views/connexion_view.php" class="btn">Connexion</a>
-        <a href="modules/blog/views/inscription_view.php" class="btn">Inscription</a>
-    </div>
-
-
+    <p>Déjà inscrit ?</p>
+    <p>Pas encore membre ?</p>
+    <a href="connexion.php" class="btn">Connexion</a>
+    <a href="inscription.php" class="btn">Inscription</a>
+</div>
 </body>
 </html>
-

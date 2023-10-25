@@ -108,7 +108,7 @@
             <button type="submit" class="btn btn-primary btn-block">Inscription</button>
         </div>
     </form>
-    <p class="text-center">Déjà inscrit ? <a href="index.php">Connectez-vous ici</a></p>
+    <p class="text-center">Déjà inscrit ? <a href="connexion.php">Connectez-vous ici</a></p>
 </div>
 
 </body>

@@ -63,9 +63,9 @@ if (!empty($_POST['pseudo'])  && !empty($_POST['email']) && !empty($_POST['passw
             die();
         }
     }
-} else {
-    header('Location: inscription.php?reg_err=already');
-    die();
+    } else {
+        header('Location: inscription.php?reg_err=already');
+        die();
 
 }
 ?>
