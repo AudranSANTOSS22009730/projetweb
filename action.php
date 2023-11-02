@@ -37,8 +37,8 @@ if(isset($_GET['t'],$_GET['id']) AND !empty($_GET['t']) AND !empty($_GET['id']))
         }
         header('Location: article.php?id='.$getid);
     } else {
-        exit('Erreur fatale. <a href="http://127.0.0.1/Tutos_PHP/Articles/">Revenir à l\'accueil</a>');
+        exit('Erreur fatale. <a href="modules/blog/views/acceuil_view.php">Revenir à l\'accueil</a>');
     }
 } else {
-    exit('Erreur fatale. <a href="http://127.0.0.1/Tutos_PHP/Articles/">Revenir à l\'accueil</a>');
+    exit('Erreur fatale. <a href="modules/blog/views/acceuil_view.php">Revenir à l\'accueil</a>');
 }

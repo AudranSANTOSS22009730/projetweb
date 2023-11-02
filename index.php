@@ -14,8 +14,6 @@
 </head>
 <body>
 <div class="links-container">
-    <p>Déjà inscrit ?</p>
-    <p>Pas encore membre ?</p>
     <a href="connexion.php" class="btn">Connexion</a>
     <a href="inscription.php" class="btn">Inscription</a>
 </div>
