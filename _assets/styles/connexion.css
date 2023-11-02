@@ -1,0 +1,65 @@
+/* CSS pour le body */
+body {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* CSS pour le formulaire de connexion */
+.login-form {
+    background-color: #ffd929;
+    color: black;
+    width: 340px;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+/* CSS pour le titre du formulaire */
+.login-form h2 {
+    margin: 0 0 15px;
+}
+
+/* CSS pour les champs de saisie */
+.login-form input[type="email"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+}
+
+/* CSS pour les libellés des champs */
+.login-form label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+/* CSS pour le bouton de connexion */
+.login-form button[type="submit"] {
+    background-color: black;
+    color: #ffd929;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-form button[type="submit"]:hover {
+    background-color: #ffcc00;
+    color: black;
+}
