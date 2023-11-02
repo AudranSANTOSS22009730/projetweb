@@ -1,65 +1,87 @@
-/* CSS pour le body */
+/* connexion.css */
 body {
-    background-color: black;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
     display: flex;
+    height: 100vh;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-    font-family: Arial, sans-serif;
 }
 
-/* CSS pour le formulaire de connexion */
-.login-form {
-    background-color: #ffd929;
-    color: black;
-    width: 340px;
-    padding: 30px;
-    border-radius: 5px;
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    text-align: center;
+
+.login-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 300px;
 }
 
-/* CSS pour le titre du formulaire */
 .login-form h2 {
-    margin: 0 0 15px;
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
 }
 
-/* CSS pour les champs de saisie */
-.login-form input[type="email"],
-.login-form input[type="password"] {
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+input[type="email"],
+input[type="password"] {
     width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
+    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     outline: none;
-    font-size: 16px;
+    font-size: 14px;
 }
 
-/* CSS pour les libellés des champs */
-.login-form label {
-    display: block;
-    text-align: left;
-    margin-bottom: 5px;
-    font-size: 10px;
-    font-weight: bold;
+#showPassword {
+    margin: 10px 0;
 }
 
-/* CSS pour le bouton de connexion */
-.login-form button[type="submit"] {
-    background-color: black;
-    color: #ffd929;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 12px 20px;
+input[type="submit"] {
+    width: 100%;
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
 }
 
-.login-form button[type="submit"]:hover {
-    background-color: #ffcc00;
-    color: black;
+input[type="submit"]:hover {
+    background-color: #2c3e50;
+}
+
+.text-center {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.text-center a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.text-center a:hover {
+    text-decoration: underline;
+}
+
+font[color="red"] {
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: 600;
 }
