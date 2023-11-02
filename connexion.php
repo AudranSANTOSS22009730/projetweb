@@ -1,77 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+session_start();
+
+include "config.php";
+
+
+if(isset($_POST['formconnexion'])) {
+    $email = htmlspecialchars($_POST['email']);
+    $password = htmlspecialchars($_POST['password']);
+    if(!empty($email) AND !empty($password)) {
+        $requser = $conn ->prepare("SELECT * FROM users WHERE email = ? AND password = ?");
+        $requser->execute(array($email, $password));
+        $userexist = $requser->rowCount();
+        if($userexist == 1) {
+            $userinfo = $requser->fetch();
+            $_SESSION['id'] = $userinfo['id'];
+            $_SESSION['pseudo'] = $userinfo['pseudo'];
+            $_SESSION['email'] = $userinfo['email'];
+            header("Location: profil.php?id=".$_SESSION['id']);
+
+        } else {
+            $erreur = "Mauvais mail ou mot de passe !";
+        }
+    } else {
+        $erreur = "Tous les champs doivent être complétés !";
+    }
+}
+?>
+<html>
 <head>
-    <!-- Votre contenu du head existant -->
+    <title>Connexion</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="_assets/styles/connexion.css">
 </head>
 <body>
-<div class="login-form">
+<div align="center">
+    <h2>Connexion</h2>
+    <br /><br />
+    <form method="POST" action="">
+        <input type="email" name="email" placeholder="Mail" />
+        <input type="password" name="password" placeholder="Mot de passe" />
+        <br /><br />
+        <input type="submit" name="formconnexion" value="Se connecter !" />
+    </form>
     <?php
-    if(isset($_GET['login_err'])) {
-        $err = htmlspecialchars($_GET['login_err']);
-
-        switch($err) {
-            case 'password':
-                echo '<div class="alert alert-danger">
-                    <strong>Erreur</strong> mot de passe incorrect
-                </div>';
-                break;
-
-            case 'email':
-                echo '<div class="alert alert-danger">
-                    <strong>Erreur</strong> email incorrect
-                </div>';
-                break;
-        }
+    if(isset($erreur)) {
+        echo '<font color="red">'.$erreur."</font>";
     }
     ?>
-
-    <form action="connex.php" method="post">
-        <h2 class="text-center">Connexion</h2>
-        <div class="form-group">
-            <input type="email" name="email" class="form-control" placeholder="Email" required="required" autocomplete="off">
-        </div>
-        <div class="form-group">
-            <input type="password" name="password" class="form-control" placeholder="Mot de passe" required="required" autocomplete="off">
-        </div>
-        <div class="form-group">
-            <button id="connexion-button" type="submit" class="btn btn-primary btn-block">Connexion</button>
-        </div>
-    </form>
-    <p class="text-center"><a href="inscription.php">Inscription</a></p>
-    <p class="text-center"><a href="mdpOublie.php">Mot de passe oublié</a></p>
 </div>
-
-<script>
-    var loginAttempts = 0;
-    var maxLoginAttempts = 3;
-    var lockoutTime = 60; // 60 seconds
-
-    function checkPassword() {
-        // Replace this logic with actual password validation
-        var isPasswordCorrect = false;
-
-        if (!isPasswordCorrect) {
-            loginAttempts++;
-            var remainingAttempts = maxLoginAttempts - loginAttempts;
-
-            if (remainingAttempts > 0) {
-                window.alert("Mot de passe incorrect. " + remainingAttempts + " tentative(s) restante(s).");
-            } else {
-                document.getElementById('connexion-button').disabled = true;
-                document.getElementById('connexion-button').classList.add("btn-danger");
-                setTimeout(function () {
-                    resetLoginAttempts();
-                }, lockoutTime * 1000);
-            }
-        }
-    }
-
-    function resetLoginAttempts() {
-        loginAttempts = 0;
-        document.getElementById('connexion-button').disabled = false;
-        document.getElementById('connexion-button').classList.remove("btn-danger");
-    }
-</script>
-
 </body>
 </html>

@@ -19,7 +19,7 @@ $articles = $conn->query('SELECT * FROM articles ORDER BY date_time_publication 
 
         <!-- Bouton pour rediger un article, css à modifier c'est moche -->
         <a href="redaction.php"><button>Rédiger un article</button></a>
-
+        <a href="envoie.php"><button>Ecire un message</button></a>
 
 
 

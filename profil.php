@@ -1,43 +1,40 @@
 <?php
-// Inclure ici la connexion à la base de données et les fonctions nécessaires pour récupérer les informations de l'utilisateur
-// Exemple : include('includes/db.php');
+session_start();
 
-// Supposons que vous avez récupéré les informations de l'utilisateur depuis la base de données dans un tableau $user.
-$user = [
-    'id' => 1,
-    'username' => 'utilisateur1',
-    'nom' => 'Nom de l\'utilisateur',
-    'email' => 'utilisateur@email.com',
-    'bio' => 'Description de l\'utilisateur...',
-    // Autres informations du profil
-];
+include "config.php";
+
+if(isset($_GET['id']) AND $_GET['id'] > 0) {
+    $getid = intval($_GET['id']);
+    $requser = $conn->prepare('SELECT * FROM users WHERE id = ?');
+    $requser->execute(array($getid));
+    $userinfo = $requser->fetch();
+    ?>
+    <html>
+    <head>
+        <title>Profil</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    <div align="center">
+        <h2>Profil de <?php echo $userinfo['pseudo']; ?></h2>
+        <br /><br />
+        Pseudo = <?php echo $userinfo['pseudo']; ?>
+        <br />
+        Mail = <?php echo $userinfo['email']; ?>
+        <br />
+        <?php
+        if(isset($_SESSION['id']) AND $userinfo['id'] == $_SESSION['id']) {
+            ?>
+            <br />
+            <a href="editionprofil.php">Editer mon profil</a>
+            <a href="deconnexion.php">Se déconnecter</a>
+            <a href="modules/blog/views/acceuil_view.php">Acceder à l'acceuil</a>
+            <?php
+        }
+        ?>
+    </div>
+    </body>
+    </html>
+    <?php
+}
 ?>
-
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Profil de <?php echo $user['username']; ?></title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <link rel="icon" href="wapp_icon.png" type="image/png">
-</head>
-<body>
-<?php include('includes/header.php'); ?>
-
-<div class="container">
-    <?php include('includes/sidebar.php'); ?>
-
-    <main>
-        <div class="profile">
-            <h1><?php echo $user['nom']; ?></h1>
-            <p>@<?php echo $user['username']; ?></p>
-            <p><?php echo $user['email']; ?></p>
-            <p><?php echo $user['bio']; ?></p>
-            <!-- Autres informations du profil -->
-        </div>
-
-        <!-- Afficher les publications de l'utilisateur ici -->
-    </main>
-</div>
-</body>
-</html>

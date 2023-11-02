@@ -2,6 +2,8 @@
 session_start();
 require_once 'config.php';
 
+
+
 if (!empty($_POST['email']) && !empty($_POST['password'])) {
 
     function validate($data)
