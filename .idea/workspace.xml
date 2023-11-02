@@ -5,9 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a3a9227-5a67-4546-b6cd-ab0c496a7cd3" name="Changes" comment="tentative de résutlion du probleme ajout de fichier JS">
-      <change afterPath="$PROJECT_DIR$/_assets/styles/acceuil.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_assets/scripts/verification_utilisateur.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/connexion.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/projetweb.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/projetweb.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_09_2023_11_01__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_09_2023_11_01__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_09_2023_16_08__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_09_2023_16_08__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/blog/views/acceuil_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blog/views/acceuil_view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_assets/scripts/Inscription.js" beforeDir="false" afterPath="$PROJECT_DIR$/_assets/scripts/suggestion_mail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_assets/scripts/SecureMdp.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_assets/scripts/afficherMdp.js" beforeDir="false" afterPath="$PROJECT_DIR$/_assets/scripts/afficher.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_assets/scripts/scripts.php" beforeDir="false" afterPath="$PROJECT_DIR$/_assets/scripts/connexafficher.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/connexion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inscription.php" beforeDir="false" afterPath="$PROJECT_DIR$/inscription.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +30,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -43,10 +52,10 @@
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/bin/php" />
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2V3hiSvSb6xnOivyHAsnsWEDN3T" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -96,6 +105,7 @@
       <workItem from="1695882249573" duration="3791000" />
       <workItem from="1696011265508" duration="8073000" />
       <workItem from="1696149605063" duration="16544000" />
+      <workItem from="1698922621158" duration="3251000" />
     </task>
     <task id="LOCAL-00001" summary="Ajout de fichier">
       <created>1694508356645</created>
