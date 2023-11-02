@@ -81,12 +81,10 @@
             <input type="text" name="email" id="email" class="form-control" placeholder="Email" required="required" autocomplete="off">
             <!-- Suggestions pour l'e-mail -->
             <div id="email-suggestions" style="display: none;">
-                <div class="email-suggestion">gmail.com</div>
-                <div class="email-suggestion">GMX</div>
-                <div class="email-suggestion">ProtonMail</div>
-                <div class="email-suggestion">Yahoo Mail</div>
-                <div class="email-suggestion">Outlook.com</div>
-                <div class="email-suggestion">mail.fr</div>
+                <div class="email-suggestion">@gmail.com</div>
+                <div class="email-suggestion">@hotmail.fr</div>
+                <div class="email-suggestion">@icloud.com</div>
+                <div class="email-suggestion">@outlook.com</div>
             </div>
         </div>
         <div class="form-group">

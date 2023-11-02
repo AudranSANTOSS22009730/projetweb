@@ -64,3 +64,11 @@ body {
     border: 1px solid red; /* Bordure rouge pour indiquer la non-correspondance */
     background-color: #FFD9D9; /* Fond rouge clair */
 }
+.email-suggestion {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.email-suggestion:hover {
+    background-color: #f0f0f0;
+}

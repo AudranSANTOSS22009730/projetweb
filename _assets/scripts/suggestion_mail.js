@@ -1,5 +1,8 @@
 // Suggestions pour l'e-mail
+
+// Suggestions pour l'e-mail
 const emailInput = document.getElementById("email");
+const emailLabel = document.querySelector('label[for="email"]');
 const emailSuggestions = document.getElementById("email-suggestions");
 const emailSuggestionItems = emailSuggestions.getElementsByClassName("email-suggestion");
 
@@ -27,10 +30,12 @@ emailInput.addEventListener("input", function () {
     }
 });
 
-// Ajouter des écouteurs d'événements pour gérer les interactions avec les suggestions
+// Afficher les suggestions lorsque le champ email obtient le focus
 emailInput.addEventListener("focus", showSuggestions);
+// Masquer les suggestions lorsque le champ email perd le focus
 emailInput.addEventListener("blur", hideSuggestions);
 
+// Remplir le champ email avec la suggestion choisie
 for (let suggestion of emailSuggestionItems) {
     suggestion.addEventListener("click", function () {
         emailInput.value = suggestion.textContent;

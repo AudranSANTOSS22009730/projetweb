@@ -4,18 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a3a9227-5a67-4546-b6cd-ab0c496a7cd3" name="Changes" comment="tentative de résutlion du probleme ajout de fichier JS">
-      <change afterPath="$PROJECT_DIR$/_assets/scripts/verification_utilisateur.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/connexion.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/projetweb.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/projetweb.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_09_2023_11_01__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_09_2023_11_01__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_09_2023_16_08__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_09_2023_16_08__Changes_.xml" afterDir="false" />
+    <list default="true" id="2a3a9227-5a67-4546-b6cd-ab0c496a7cd3" name="Changes" comment="ajout de code en JS et modification du CSS">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_assets/scripts/Inscription.js" beforeDir="false" afterPath="$PROJECT_DIR$/_assets/scripts/suggestion_mail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_assets/scripts/SecureMdp.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_assets/scripts/afficherMdp.js" beforeDir="false" afterPath="$PROJECT_DIR$/_assets/scripts/afficher.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_assets/scripts/scripts.php" beforeDir="false" afterPath="$PROJECT_DIR$/_assets/scripts/connexafficher.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/connexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/connexion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_assets/config/config.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_assets/fonts/fonts.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_assets/includes/includes.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_assets/inscription.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_assets/libs/libs.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_assets/logs/logs.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_assets/scripts/suggestion_mail.js" beforeDir="false" afterPath="$PROJECT_DIR$/_assets/scripts/suggestion_mail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_assets/styles/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_assets/styles/inscription.css" beforeDir="false" afterPath="$PROJECT_DIR$/_assets/styles/inscription.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_assets/utils/class/class.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_assets/webfronts/webfronts.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/inscription.php" beforeDir="false" afterPath="$PROJECT_DIR$/inscription.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -105,7 +106,7 @@
       <workItem from="1695882249573" duration="3791000" />
       <workItem from="1696011265508" duration="8073000" />
       <workItem from="1696149605063" duration="16544000" />
-      <workItem from="1698922621158" duration="3251000" />
+      <workItem from="1698922621158" duration="7327000" />
     </task>
     <task id="LOCAL-00001" summary="Ajout de fichier">
       <created>1694508356645</created>
@@ -172,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1696490609602</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="ajout de code en JS et modification du CSS">
+      <created>1698926152891</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1698926152891</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,6 +205,7 @@
     <MESSAGE value="mvc pour la connexion et l'acceuil" />
     <MESSAGE value="résolution partiel du probleme de redirection vers la page d'acceuil." />
     <MESSAGE value="tentative de résutlion du probleme ajout de fichier JS" />
-    <option name="LAST_COMMIT_MESSAGE" value="tentative de résutlion du probleme ajout de fichier JS" />
+    <MESSAGE value="ajout de code en JS et modification du CSS" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajout de code en JS et modification du CSS" />
   </component>
 </project>
