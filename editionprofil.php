@@ -35,6 +35,8 @@ if(isset($_SESSION['id'])) {
     <head>
         <title>TUTO PHP</title>
         <meta charset="utf-8">
+        <link rel="stylesheet" href="_assets/styles/editionprofil.css">
+
     </head>
     <body>
     <div align="center">

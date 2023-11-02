@@ -4,7 +4,7 @@ namespace models;
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-
+include "../../../config.php";
 
 // Créez une connexion à la base de données
 
@@ -149,101 +149,11 @@ class Users {
     }
 
 
-    public function TrouverUtilsateur($email, $pseudo)
-    {
-        if (!empty($_POST['email']) && !empty($_POST['password'])) // Si il existe les champs email, password et qu'il sont pas vident
-        {
-            function validate($data)
-            {
-                $data = trim($data);
-                $data = stripslashes($data);
-                $data = htmlspecialchars($data);
-                return $data;
-            }
-
-            // Patch XSS
-            $email = validate($_POST['email']);
-            $password = validate($_POST['password']);
-
-            if (empty($email)) {
-                header("Location: index.php?error=User Name is required");
-                exit();
-            } else if (empty($password)) {
-                header("Location: index.php?error= Password is required");
-                exit();
-            } else {
-                $sql = "SELECT * FROM users WHERE email = '$email' AND password = '$password'";
-                $result = mysqli_query($conn, $sql);
-
-                if (mysqli_num_rows($result) == 1) {
-                    $row = mysqli_fetch_assoc($result);
-                    if ($row['email'] === $email && $row['password'] === $password) {
-                        header("Location: ../../../accueil.php");
-                        exit();
-                    } else {
-                        header("Location: index: index.php?error=Incorrect User name or password");
-                        exit();
-                    }
-                } else {
-                    header("Location: index: index.php?error=Incorrect User name or password");
-                    exit();
-                }
-            }
-        }
-    }
 
 
 
 
 
-
-    public function resetMotDePasse($email)
-    {
-        if (!$this->MailExistant($email)) {
-            header('Location: ../index.php?erreur=email_inexistant');
-            exit;
-        }
-        $iduniq = iduniq(true);
-        $code = strtoupper(substr($iduniq, -5));
-        $query = "UPDATE users SET code = :code WHERE email = email";
-        $stmt = $this->connectwap_bd()->prepare($query);
-        $stmt->bindParam('code', $code, PDO::PARAM_STR);
-        $stmt->bindParam('email', $email, PDO::PARAM_STR);
-
-        if ($stmt->execute()) {
-            require '\..\..\autoload.php';
-            $mail = new PHPMailer(true);
-
-            try {
-                $mail->setLanguage('fr', '/optional/path/to/language/directory/');
-                $mail->isSMTP();
-                $mail->SMTPAuth = true;
-                $mail->Username = 'wap.website.mail@gmail.com';
-                $mail->Password = 'lyesYacineSoudani20042024:)r';
-                $mail->SMTPSecure = "tls";
-                $mail->Port = 587;
-                $mail->setFrom('reguiglyes@gmail.com', 'Lyes');
-                $mail->CharSet = 'UTF-8';
-                $mail->Subject = 'Réintialisation de votre mot de passe';
-                $mail->Body = "Vous avez oubliez votre mot de passe ?. Pas de Soucis ! Ca m'arrive tout les jours.. Votre code de réintialisation de mot de passe est: $code  
-                Rendez vous la semaine prochaine ;)";
-                $mail->AltBody = 'This is the body in plain for non-HTML mail clients';
-                if ($mail->send()) {
-                    $_SESSION['email'] = $email;
-                    header("Location: ../views/codeVerif.php");
-                    exit;
-                } else {
-                    header('Location: ../../index.php?erreur= email_non_envoye');
-                    exit;
-                }
-            } catch (Exception $e) {
-                echo "Le mail ne peut pas etre envoyé. MAIL ERROR: {$mail ->ErrorInfo}";
-            }
-        } else {
-            header('Location: ../../index.php?erreur=wap_bd_error');
-            exit;
-        }
-    }
 
     public function changeMotDePasse($newPassword, $confirmPassword, $email){
         if ($newPassword == $confirmPassword) {

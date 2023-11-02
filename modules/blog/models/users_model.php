@@ -3,11 +3,9 @@
 namespace projetweba\modules\blog\models;
 class Users {
     private $conn;
-
     public function __construct($conn) {
         $this->conn = $conn;
     }
-
     public function isUserExists($email) {
         $email = strtolower($email);
         $check = $this->conn->prepare('SELECT email FROM users WHERE email = ?');
