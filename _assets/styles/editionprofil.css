@@ -10,7 +10,6 @@ div {
     box-sizing: border-box;
 }
 
-
 /* Centrer le contenu */
 div[align="center"] {
     max-width: 600px;

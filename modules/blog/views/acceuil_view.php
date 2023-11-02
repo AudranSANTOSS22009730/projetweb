@@ -25,7 +25,7 @@ $articles = $conn->query('SELECT * FROM articles ORDER BY date_time_publication 
 
         <!-- Boutons de navigation -->
         <div class="nav-buttons">
-            <button onclick="location.href='amis_page.php'">Amis</button>
+            <button onclick="location.href='../../../amis.php'">Amis</button>
             <button onclick="location.href='../../../redaction.php'">Rédiger un article</button>
             <button onclick="location.href='../../../reception.php'">Messages</button>
 
