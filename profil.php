@@ -22,15 +22,15 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
     <div class="barreDeNavigation">
         <div class="haut">
             <div class="logo">
-                <i class="bx bxl-codepen"></i>
-                <span>Wapp</span>
+                <img src="wapp_icon.png" class="image-logo" alt="logo">
+                <span>app</span>
             </div>
             <i class="bx bx-menu" id="btn"></i>
         </div>
         <div class="utilisateur">
             <img src="wapp_icon.png" class="image-Utilisateur" alt="utilisateur">
             <div>
-                <p class="bold">Clint B.</p>
+                <p class="bold"><?php echo $userinfo['pseudo']; ?></p>
                 <p>Admin</p>
             </div>
         </div>
@@ -59,32 +59,30 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
         </ul>
     </div>
 
-    <div class="main-content">
+    <div class="conteneur-principale">
         <div class="conteneur">
-            <h2>Profil de <?php echo $userinfo['pseudo']; ?></h2>
-        </div>
-    </div>
-
-    <div align="center">
-        <h2>Profil de <?php echo $userinfo['pseudo']; ?></h2>
-        <br /><br />
-        Pseudo = <?php echo $userinfo['pseudo']; ?>
-        <br />
-        Mail = <?php echo $userinfo['email']; ?>
-        <br />
-        Date de création du compte = <?php echo $userinfo['date_time_creation']; ?>
-        <br />
-        <?php
-        if(isset($_SESSION['id']) AND $userinfo['id'] == $_SESSION['id']) {
-            ?>
-            <a href="modules/blog/views/acceuil_view.php">Acceder à l'acceuil</a>
-            <div class="profile-actions">
-                <a href="editionprofil.php">Editer mon profil</a>
-                <a href="deconnexion.php">Se déconnecter</a>
+            <div align="center">
+                <h2>Profil de <?php echo $userinfo['pseudo']; ?></h2>
+                <br /><br />
+                Pseudo = <?php echo $userinfo['pseudo']; ?>
+                <br />
+                Mail = <?php echo $userinfo['email']; ?>
+                <br />
+                Date de création du compte = <?php echo $userinfo['date_time_creation']; ?>
+                <br />
+                <?php
+                if(isset($_SESSION['id']) AND $userinfo['id'] == $_SESSION['id']) {
+                    ?>
+                    <a href="modules/blog/views/acceuil_view.php">Acceder à l'acceuil</a>
+                    <div class="profile-actions">
+                        <a href="editionprofil.php">Editer mon profil</a>
+                        <a href="deconnexion.php">Se déconnecter</a>
+                    </div>
+                    <?php
+                }
+                ?>
             </div>
-            <?php
-        }
-        ?>
+        </div>
     </div>
     </body>
 
