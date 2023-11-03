@@ -6,18 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2a3a9227-5a67-4546-b6cd-ab0c496a7cd3" name="Changes" comment="ajout de code en JS et modification du CSS">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_assets/config/config.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_assets/fonts/fonts.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_assets/includes/includes.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_assets/inscription.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_assets/libs/libs.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_assets/logs/logs.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_assets/scripts/suggestion_mail.js" beforeDir="false" afterPath="$PROJECT_DIR$/_assets/scripts/suggestion_mail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_assets/styles/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_assets/styles/inscription.css" beforeDir="false" afterPath="$PROJECT_DIR$/_assets/styles/inscription.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_assets/utils/class/class.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_assets/webfronts/webfronts.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inscription.php" beforeDir="false" afterPath="$PROJECT_DIR$/inscription.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/suggestion_mail.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +95,7 @@
       <workItem from="1695882249573" duration="3791000" />
       <workItem from="1696011265508" duration="8073000" />
       <workItem from="1696149605063" duration="16544000" />
-      <workItem from="1698922621158" duration="7327000" />
+      <workItem from="1698922621158" duration="9489000" />
     </task>
     <task id="LOCAL-00001" summary="Ajout de fichier">
       <created>1694508356645</created>
@@ -180,7 +169,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698926152891</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="ajout de code en JS et modification du CSS">
+      <created>1698954264788</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1698954264788</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
