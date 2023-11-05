@@ -39,9 +39,9 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
             <li>
                 <a href="modules/blog/views/acceuil_view.php">
                     <i class="bx bxs-grid-alt"></i>
-                    <span class="nav-item">Accueuil</span>
+                    <span class="nav-item">Acceuil</span>
                 </a>
-                <span class="tooltip">Accueuil</span>
+                <span class="tooltip">Acceuil</span>
             </li>
             <li>
                 <a href="">
