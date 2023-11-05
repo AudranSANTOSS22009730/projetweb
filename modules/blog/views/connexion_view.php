@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Connexion</title>
-    <link rel="stylesheet" type="text/css" href="../_assets/styles/style.css">
+    <link rel="stylesheet" type="text/css" href="../../../_assets/styles/connexion.css">
     <link rel="icon" href="wapp_icon.png" type="image/png">
 </head>
 <body>

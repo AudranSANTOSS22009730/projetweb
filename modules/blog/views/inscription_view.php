@@ -7,7 +7,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../../_assets/styles/inscription.css">
-    <script src="../../../_assets/scripts/afficher_password.js"></script>
+    <script src="../../../_assets/scripts/afficher.js"></script>
     <title>Inscription</title>
 </head>
 <body>
