@@ -1,0 +1,42 @@
+h1, h2 {
+    color: #333;
+    padding: 0 20px; /* Ajoutez du padding pour aligner avec le contenu */
+}
+
+/* Style pour la liste d'amis */
+.container {
+    background-color: #fff;
+    margin: 20px auto; /* Centre le conteneur */
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    max-width: 800px; /* Définit une largeur maximale pour les écrans plus larges */
+}
+
+.friend-item, .pending-item, .user-item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Style pour les demandes d'amis en attente */
+.pending-item {
+    color: #a94442; /* Couleur rougeâtre pour signifier le statut en attente */
+}
+
+/* Liens pour accepter les demandes d'amis */
+a {
+    color: #337ab7;
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #337ab7;
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+}
+
+a:hover {
+    background-color: #337ab7;
+    color: #fff;
+}
+
+/* Liste des autres utilisateurs */
+/* Ajoutez vos styles ici si vous avez un design spécifique en tête pour cette section */

@@ -1,0 +1,44 @@
+body {
+    background-color: #333; /* Fond sombre, cohérent avec la page de post */
+    font-family: 'Arial', sans-serif; /* Police de caractère */
+    color: white; /* Couleur du texte */
+    padding: 20px; /* Espacement autour du contenu */
+}
+
+a {
+    color: #ffc107; /* Couleur du lien, semblable au bouton d'envoi */
+    text-decoration: none; /* Pas de soulignement */
+    font-weight: bold; /* Texte en gras */
+}
+
+a:hover {
+    text-decoration: underline; /* Souligne au survol */
+}
+
+h3 {
+    color: #ffc107; /* Titre en couleur jaune pour correspondre aux boutons */
+    margin-bottom: 20px; /* Espacement après le titre */
+}
+
+.message-box {
+    background-color: #222; /* Fond pour chaque message */
+    padding: 15px;
+    border-radius: 5px; /* Bords arrondis */
+    box-shadow: 0px 0px 10px #000; /* Ombre pour le conteneur */
+    margin-bottom: 10px; /* Espacement entre les messages */
+}
+
+.message-header {
+    color: #ffc107; /* Couleur de l'expéditeur, similaire aux titres et liens */
+    margin-bottom: 5px; /* Espacement avant le message */
+}
+
+.message-content {
+    white-space: pre-wrap; /* Garde la mise en forme du texte, comme les retours à la ligne */
+}
+
+.separator {
+    border-bottom: 1px solid #444; /* Séparateur entre les messages */
+    margin-top: 10px; /* Espacement au-dessus du séparateur */
+    margin-bottom: 10px; /* Espacement en dessous du séparateur */
+}
