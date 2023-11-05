@@ -1,26 +1,35 @@
 <?php
+// Démarre la session
 session_start();
 
+// Inclue le fichier de configuration pour la base de données
 include "config.php";
 
+// Vérifie si le formulaire de connexion a été soumis
 if (isset($_POST['formconnexion'])) {
-    $email = htmlspecialchars($_POST['email']);
-    $password = htmlspecialchars($_POST['password']);
+    $email = htmlspecialchars($_POST['email']); // Récupére l'e-mail saisi et le sécuriser
+    $password = htmlspecialchars($_POST['password']); // Récupére le mot de passe saisi et le sécurise
+
+    // Vérifie si les champs e-mail et mot de passe ne sont pas vides
     if (!empty($email) AND !empty($password)) {
+        // Prépare et exécute une requête pour vérifier si l'utilisateur existe dans la base de données
         $requser = $conn->prepare("SELECT * FROM users WHERE email = ? AND password = ?");
         $requser->execute(array($email, $password));
+
+        // Compte le nombre de lignes correspondantes
         $userexist = $requser->rowCount();
+        // Si l'utilisateur existe
         if ($userexist == 1) {
-            $userinfo = $requser->fetch();
+            $userinfo = $requser->fetch(); // Récupére les informations de l'utilisateur
             $_SESSION['id'] = $userinfo['id'];
             $_SESSION['pseudo'] = $userinfo['pseudo'];
             $_SESSION['email'] = $userinfo['email'];
-            header("Location: profil.php?id=" . $_SESSION['id']);
+            header("Location: profil.php?id=" . $_SESSION['id']); // Redirige vers la page de profil
         } else {
-            $erreur = "Mauvais mail ou mot de passe !";
+            $erreur = "Mauvais mail ou mot de passe !";  // Affiche un message d'erreur
         }
     } else {
-        $erreur = "Tous les champs doivent être complétés !";
+        $erreur = "Tous les champs doivent être complétés !"; // Affiche un message d'erreur
     }
 }
 ?>
@@ -30,8 +39,8 @@ if (isset($_POST['formconnexion'])) {
     <meta charset="utf-8">
     <title>Connexion</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="connexion.css">
-    <script src="_assets/scripts/connexafficher.js"></script>
+    <link rel="stylesheet" href="_assets/styles/connexion.css">
+    <script src="_assets/scripts/afficher.js"></script>
 
 </head>
 <body>
@@ -54,7 +63,7 @@ if (isset($_POST['formconnexion'])) {
         </form>
         <?php
         if (isset($erreur)) {
-            echo '<font color="red">' . $erreur . "</font>";
+            echo '<font color="red">' . $erreur . "</font>"; // Affiche un message d'erreur si nécessaire
         }
         ?>
     </div>
@@ -73,7 +82,7 @@ if (isset($_POST['formconnexion'])) {
     }
 
     document.addEventListener("DOMContentLoaded", function () {
-        // Ajouter un écouteur d'événement pour la case à cocher "Afficher le mot de passe"
+        // Ajoute un écouteur d'événement pour la case à cocher "Afficher le mot de passe"
         const showPasswordCheckbox = document.getElementById("showPassword");
         showPasswordCheckbox.addEventListener("change", togglePasswordVisibility);
     });

@@ -25,7 +25,7 @@ if(isset($_GET['id']) AND !empty($_GET['id'])) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Accueil</title>
+    <title>Articles</title>
     <meta charset="utf-8">
 </head>
 <body>

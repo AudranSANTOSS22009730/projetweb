@@ -2,8 +2,9 @@
 session_start();
 include "config.php";
 
-
+// Vérifie si l'utilisateur est connecté
 if(isset($_SESSION['id']) AND !empty($_SESSION['id'])) {
+    // Récupère les messages destinés à l'utilisateur connecté
     $msg = $conn->prepare('SELECT * FROM messages WHERE id_destinataire = ?');
     $msg->execute(array($_SESSION['id']));
     $msg_nbr = $msg->rowCount();
@@ -13,6 +14,7 @@ if(isset($_SESSION['id']) AND !empty($_SESSION['id'])) {
     <head>
         <title>Boîte de réception</title>
         <meta charset="utf-8" />
+        <link rel="stylesheet" href="_assets/styles/reception.css">
     </head>
     <body>
     <a href="envoie.php">Nouveau message</a><br /><br /><br />
@@ -20,6 +22,7 @@ if(isset($_SESSION['id']) AND !empty($_SESSION['id'])) {
     <?php
     if($msg_nbr == 0) { echo "Vous n'avez aucun message..."; }
     while($m = $msg->fetch()) {
+        // Récupère le pseudo de l'expéditeur
         $p_exp = $conn->prepare('SELECT pseudo FROM users WHERE id = ?');
         $p_exp->execute(array($m['id_expediteur']));
         $p_exp = $p_exp->fetch();

@@ -10,14 +10,6 @@ if (!empty($_POST['pseudo']) && !empty($_POST['email']) && !empty($_POST['passwo
     $age = htmlspecialchars($_POST['age']);
     $genre = htmlspecialchars($_POST['genre']);
     $password = htmlspecialchars($_POST['password']);
-    if (strlen($password) < 8 ||
-        !preg_match('/[A-Z]/', $password) ||
-        !preg_match('/[a-z]/', $password) ||
-        !preg_match('/[0-9]/', $password) ||
-        !preg_match('/[@$!%*?&]/', $password)) {
-        header('Location: inscription.php?reg_err=password_strength');
-        die();
-    }
     $password_retype = htmlspecialchars($_POST['password_retype']);
 
     // Vérifie si l'utilisateur existe

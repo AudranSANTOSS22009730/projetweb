@@ -1,16 +1,14 @@
 <?php
-    session_start();
-    require 'config.php';
+session_start();
+require 'config.php';
 
-    $query = $conn->prepare("SELECT * FROM friends WHERE pseudo_1 = :pseudo_1 OR pseudo_2 = :pseudo_2");
-
-    $query->execute([
-        "pseudo_1" => $_SESSION['pseudo'],
-        "pseudo_2" => $_SESSION['pseudo']
-    ]);
-
-    $data  = $query->fetchAll();
-
+// Récupère la liste d'amis de l'utilisateur connecté
+$query = $conn->prepare("SELECT * FROM friends WHERE pseudo_1 = :pseudo_1 OR pseudo_2 = :pseudo_2");
+$query->execute([
+    "pseudo_1" => $_SESSION['pseudo'],
+    "pseudo_2" => $_SESSION['pseudo']
+]);
+$data  = $query->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -18,50 +16,45 @@
 <head>
     <title>Amis</title>
     <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="_assets/styles/amis.css">
 </head>
 <body>
 <div class="container">
-<h1> Bienvenue <?php echo $_SESSION['pseudo']?></h1>
+    <h1>Bienvenue <?php echo htmlspecialchars($_SESSION['pseudo']); ?></h1>
 
-<h2> Liste d'amis :</h2>
+    <h2>Liste d'amis :</h2>
+    <div class="friend-list">
+        <?php foreach ($data as $ami): ?>
+            <div class="friend-item">
+                <?php
+                // Détermine le pseudo de l'autre utilisateur
+                $other_pseudo = $ami['pseudo_1'] === $_SESSION['pseudo'] ? $ami['pseudo_2'] : $ami['pseudo_1'];
 
-<?php
+                // Vérifie si la demande d'ami est en attente d'acceptation
+                $is_pending = $ami['is_pending'] === '1';
+                echo htmlspecialchars($other_pseudo);
+                // Affiche un statut si la demande d'ami est en attente d'acceptation
+                if ($ami['pseudo_2'] === $_SESSION['pseudo'] && $is_pending) {
+                    echo " <span class='status pending'>en attente d'être accepté</span>";
+                }
+                ?>
+            </div>
+        <?php endforeach; ?>
+    </div>
 
-    for ($i=0; $i < sizeof($data); $i++){
+    <h2>Demandes d'amis :</h2>
+    <div class="pending-requests">
+        <?php foreach ($data as $ami): ?>
+            <?php if ($ami["is_pending"] === '1' && $ami['pseudo_2'] === $_SESSION['pseudo']): ?>
+                <div class="pending-item">
+                    <?php echo htmlspecialchars($ami['pseudo_1']). " <a href='#' class='accept-link'>Accepter</a>"; ?>
+                </div>
+            <?php endif; ?>
+        <?php endforeach; ?>
+    </div>
 
-        if($data[$i]['pseudo_1'] == $_SESSION['pseudo']){
-
-            echo$data[$i]['pseudo_2'];
-
-            if( $data[$i]['is_pending'] == true)
-                echo " (en attente d'être accepté)";
-        }else{
-
-            if( $data[$i]['is_pending'] == false){
-                echo $data[$i]['pseudo_1'];
-            }
-        }
-        echo'<br/>';
-    }
-
-?>
-
-<h2>Demande d'amis :</h2>
-
-<?php
-
-    for ($i=0; $i < sizeof($data); $i++){
-        if($data[$i]["is_pending"] == true && $data[$i]['pseudo_2'] == $_SESSION['pseudo']){
-            echo $data[$i]['pseudo_1']. " <a href='#'>Accepté</a>";
-
-
-        }
-    }
-?>
-
-<h2>Autres utilisateurs :</h2>
+    <h2>Autres utilisateurs :</h2>
 
 </div>
 </body>
 </html>
-

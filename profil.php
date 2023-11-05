@@ -8,6 +8,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
     $requser = $conn->prepare('SELECT * FROM users WHERE id = ?');
     $requser->execute(array($getid));
     $userinfo = $requser->fetch();
+    $_SESSION['user'] = $userinfo;
     ?>
     <html>
     <head>
@@ -36,21 +37,21 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
         </div>
         <ul>
             <li>
-                <a href="#">
+                <a href="modules/blog/views/acceuil_view.php">
                     <i class="bx bxs-grid-alt"></i>
                     <span class="nav-item">Accueuil</span>
                 </a>
                 <span class="tooltip">Accueuil</span>
             </li>
             <li>
-                <a href="#">
+                <a href="">
                     <i class="bx bx-body"></i>
                     <span class="nav-item">Profil</span>
                 </a>
                 <span class="tooltip">Profil</span>
             </li>
             <li>
-                <a href="#">
+                <a href="deconnexion.php">
                     <i class="bx bx-log-out"></i>
                     <span class="nav-item">Déconnexion</span>
                 </a>
@@ -64,19 +65,17 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
             <div align="center">
                 <h2>Profil de <?php echo $userinfo['pseudo']; ?></h2>
                 <br /><br />
-                Pseudo = <?php echo $userinfo['pseudo']; ?>
+                Pseudo : <?php echo $userinfo['pseudo']; ?>
                 <br />
-                Mail = <?php echo $userinfo['email']; ?>
+                Mail : <?php echo $userinfo['email']; ?>
                 <br />
-                Date de création du compte = <?php echo $userinfo['date_time_creation']; ?>
+                Date de création du compte : <?php echo $userinfo['date_time_creation']; ?>
                 <br />
                 <?php
                 if(isset($_SESSION['id']) AND $userinfo['id'] == $_SESSION['id']) {
                     ?>
-                    <a href="modules/blog/views/acceuil_view.php">Acceder à l'acceuil</a>
                     <div class="profile-actions">
                         <a href="editionprofil.php">Editer mon profil</a>
-                        <a href="deconnexion.php">Se déconnecter</a>
                     </div>
                     <?php
                 }
